@@ -1,1 +1,2 @@
-# Ini adalah repository saya dalam pembelajaran Content Management System
+# ==> Praktikum_CMS <==
+=> Ini adalah repository saya untuk pelajaran Content Management System.
