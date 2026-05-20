@@ -2,6 +2,14 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FrontController;
+
+
+/*
+Notes!
+Kita bisa membuat untuk admin kira2 seperti ini:
+=> use App\Http\Controllers\Admin\FrontController; <=
+*/
 
 /*
 |--------------------------------------------------------------------------
@@ -14,9 +22,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [FrontController::class, 'index'])->name('index');
+Route::get('/page', [FrontController::class, 'page'])->name('page');
+Route::get('/test', [FrontController::class, 'test'])->name('test');
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::get('/dashboard', function () {
     return view('dashboard');
