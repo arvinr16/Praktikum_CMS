@@ -1,332 +1,328 @@
 @extends('layouts.front')
 @section('content')
-<!DOCTYPE html>
+<div id="home">
+    <!DOCTYPE html>
 
-<html class="light" lang="id">
+    <html class="light" lang="en">
 
-<head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>LaravelApp - The PHP Framework for Web Artisans</title>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
-    <script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    "colors": {
-                        "secondary": "#505f76",
-                        "on-surface": "#191c1e",
-                        "on-primary-fixed-variant": "#003ea8",
-                        "on-tertiary-container": "#eef0ff",
-                        "surface-dim": "#d8dadc",
-                        "outline": "#737686",
-                        "tertiary-fixed": "#dae2fd",
-                        "inverse-primary": "#b4c5ff",
-                        "surface-tint": "#0053db",
-                        "primary-container": "#2563eb",
-                        "inverse-surface": "#2d3133",
-                        "secondary-fixed": "#d3e4fe",
-                        "primary": "#004ac6",
-                        "surface-container-highest": "#e0e3e5",
-                        "surface-container-low": "#f2f4f6",
-                        "error-container": "#ffdad6",
-                        "surface-variant": "#e0e3e5",
-                        "tertiary": "#4d556b",
-                        "on-surface-variant": "#434655",
-                        "tertiary-container": "#656d84",
-                        "surface-container-high": "#e6e8ea",
-                        "on-tertiary-fixed-variant": "#3f465c",
-                        "surface-container-lowest": "#ffffff",
-                        "on-secondary-container": "#54647a",
-                        "on-error": "#ffffff",
-                        "surface": "#f7f9fb",
-                        "on-primary-container": "#eeefff",
-                        "surface-bright": "#f7f9fb",
-                        "secondary-container": "#d0e1fb",
-                        "error": "#ba1a1a",
-                        "secondary-fixed-dim": "#b7c8e1",
-                        "on-primary": "#ffffff",
-                        "primary-fixed": "#dbe1ff",
-                        "on-secondary": "#ffffff",
-                        "on-primary-fixed": "#00174b",
-                        "on-secondary-fixed": "#0b1c30",
-                        "inverse-on-surface": "#eff1f3",
-                        "on-error-container": "#93000a",
-                        "on-tertiary": "#ffffff",
-                        "surface-container": "#eceef0",
-                        "primary-fixed-dim": "#b4c5ff",
-                        "on-secondary-fixed-variant": "#38485d",
-                        "on-background": "#191c1e",
-                        "on-tertiary-fixed": "#131b2e",
-                        "background": "#f7f9fb",
-                        "tertiary-fixed-dim": "#bec6e0",
-                        "outline-variant": "#c3c6d7"
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <title>Elite Wheels | Engineered for Excellence</title>
+        <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
+        <script id="tailwind-config">
+            tailwind.config = {
+                darkMode: "class",
+                theme: {
+                    extend: {
+                        "colors": {
+                            "tertiary-fixed-dim": "#a7c8ff",
+                            "inverse-surface": "#2e3132",
+                            "on-secondary-fixed": "#1c1b1b",
+                            "on-background": "#191c1d",
+                            "surface-container-highest": "#e1e3e4",
+                            "outline": "#936e69",
+                            "on-primary-container": "#fff5f3",
+                            "on-surface": "#191c1d",
+                            "on-secondary-container": "#636262",
+                            "inverse-on-surface": "#f0f1f2",
+                            "surface-container-high": "#e7e8e9",
+                            "on-error-container": "#93000a",
+                            "on-tertiary": "#ffffff",
+                            "on-primary": "#ffffff",
+                            "on-error": "#ffffff",
+                            "on-secondary": "#ffffff",
+                            "on-primary-fixed-variant": "#930007",
+                            "secondary-container": "#e2dfde",
+                            "surface": "#f8f9fa",
+                            "secondary": "#5f5e5e",
+                            "on-primary-fixed": "#410001",
+                            "background": "#f8f9fa",
+                            "error": "#ba1a1a",
+                            "surface-container": "#edeeef",
+                            "surface-container-lowest": "#ffffff",
+                            "on-tertiary-container": "#f5f7ff",
+                            "on-secondary-fixed-variant": "#474746",
+                            "surface-container-low": "#f3f4f5",
+                            "secondary-fixed-dim": "#c8c6c5",
+                            "tertiary-container": "#0071d4",
+                            "inverse-primary": "#ffb4aa",
+                            "primary-container": "#e30613",
+                            "surface-variant": "#e1e3e4",
+                            "tertiary": "#0059a8",
+                            "error-container": "#ffdad6",
+                            "secondary-fixed": "#e5e2e1",
+                            "surface-bright": "#f8f9fa",
+                            "on-surface-variant": "#5e3f3b",
+                            "tertiary-fixed": "#d5e3ff",
+                            "primary": "#b5000b",
+                            "surface-dim": "#d9dadb",
+                            "on-tertiary-fixed-variant": "#004788",
+                            "outline-variant": "#e9bcb6",
+                            "primary-fixed-dim": "#ffb4aa",
+                            "primary-fixed": "#ffdad5",
+                            "on-tertiary-fixed": "#001b3c",
+                            "surface-tint": "#c0000c"
+                        },
+                        "borderRadius": {
+                            "DEFAULT": "0.125rem",
+                            "lg": "0.25rem",
+                            "xl": "0.5rem",
+                            "full": "0.75rem"
+                        },
+                        "spacing": {
+                            "gutter": "24px",
+                            "margin-desktop": "64px",
+                            "base": "8px",
+                            "margin-mobile": "16px",
+                            "lg": "48px",
+                            "sm": "12px",
+                            "xs": "4px",
+                            "md": "24px",
+                            "xl": "80px"
+                        },
+                        "fontFamily": {
+                            "body-md": ["Inter"],
+                            "display-lg-mobile": ["Hanken Grotesk"],
+                            "headline-md": ["Hanken Grotesk"],
+                            "label-sm": ["JetBrains Mono"],
+                            "display-lg": ["Hanken Grotesk"],
+                            "body-lg": ["Inter"]
+                        },
+                        "fontSize": {
+                            "body-md": ["16px", {
+                                "lineHeight": "24px",
+                                "fontWeight": "400"
+                            }],
+                            "display-lg-mobile": ["32px", {
+                                "lineHeight": "40px",
+                                "letterSpacing": "-0.01em",
+                                "fontWeight": "700"
+                            }],
+                            "headline-md": ["24px", {
+                                "lineHeight": "32px",
+                                "fontWeight": "600"
+                            }],
+                            "label-sm": ["12px", {
+                                "lineHeight": "16px",
+                                "fontWeight": "500"
+                            }],
+                            "display-lg": ["48px", {
+                                "lineHeight": "56px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                            }],
+                            "body-lg": ["18px", {
+                                "lineHeight": "28px",
+                                "fontWeight": "400"
+                            }]
+                        }
                     },
-                    "borderRadius": {
-                        "DEFAULT": "0.125rem",
-                        "lg": "0.25rem",
-                        "xl": "0.5rem",
-                        "full": "0.75rem"
-                    },
-                    "spacing": {
-                        "2xl": "48px",
-                        "gutter": "24px",
-                        "margin-mobile": "16px",
-                        "md": "16px",
-                        "lg": "24px",
-                        "xl": "32px",
-                        "3xl": "64px",
-                        "margin-desktop": "32px",
-                        "base": "8px",
-                        "xs": "4px",
-                        "sm": "12px"
-                    },
-                    "fontFamily": {
-                        "headline-md": ["Inter"],
-                        "body-sm": ["Inter"],
-                        "headline-xl-mobile": ["Inter"],
-                        "headline-lg-mobile": ["Inter"],
-                        "label-sm": ["Inter"],
-                        "headline-xl": ["Inter"],
-                        "body-lg": ["Inter"],
-                        "label-md": ["Inter"],
-                        "headline-lg": ["Inter"],
-                        "body-md": ["Inter"],
-                        "headline-sm": ["Inter"]
-                    },
-                    "fontSize": {
-                        "headline-md": ["24px", {
-                            "lineHeight": "32px",
-                            "fontWeight": "600"
-                        }],
-                        "body-sm": ["14px", {
-                            "lineHeight": "20px",
-                            "fontWeight": "400"
-                        }],
-                        "headline-xl-mobile": ["28px", {
-                            "lineHeight": "34px",
-                            "fontWeight": "700"
-                        }],
-                        "headline-lg-mobile": ["24px", {
-                            "lineHeight": "32px",
-                            "fontWeight": "600"
-                        }],
-                        "label-sm": ["12px", {
-                            "lineHeight": "16px",
-                            "letterSpacing": "0.05em",
-                            "fontWeight": "600"
-                        }],
-                        "headline-xl": ["36px", {
-                            "lineHeight": "44px",
-                            "letterSpacing": "-0.02em",
-                            "fontWeight": "700"
-                        }],
-                        "body-lg": ["18px", {
-                            "lineHeight": "28px",
-                            "fontWeight": "400"
-                        }],
-                        "label-md": ["14px", {
-                            "lineHeight": "20px",
-                            "letterSpacing": "0.01em",
-                            "fontWeight": "500"
-                        }],
-                        "headline-lg": ["30px", {
-                            "lineHeight": "38px",
-                            "letterSpacing": "-0.01em",
-                            "fontWeight": "600"
-                        }],
-                        "body-md": ["16px", {
-                            "lineHeight": "24px",
-                            "fontWeight": "400"
-                        }],
-                        "headline-sm": ["20px", {
-                            "lineHeight": "28px",
-                            "fontWeight": "600"
-                        }]
-                    }
                 },
-            },
-        }
-    </script>
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-
-        .hero-gradient {
-            background: radial-gradient(circle at 50% 50%, rgba(37, 99, 235, 0.05) 0%, transparent 70%);
-        }
-
-        .glass-card {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(8px);
-        }
-    </style>
-</head>
-
-<body class="bg-surface text-on-surface selection:bg-primary-container selection:text-on-primary-container">
-    <!-- Header Section -->
-    <header class="fixed top-0 w-full z-50 bg-surface border-b border-outline-variant">
-        <div class="flex justify-between items-center h-16 px-margin-desktop max-w-[1440px] mx-auto">
-            <div class="font-headline-sm text-headline-sm font-bold text-primary">LaravelApp</div>
-            <nav class="hidden md:flex gap-xl items-center">
-                <a class="text-primary font-bold border-b-2 border-primary font-body-md text-body-md h-full flex items-center" href="#">Home</a>
-                <a class="text-secondary hover:text-primary transition-colors font-body-md text-body-md" href="#">Features</a>
-                <a class="text-secondary hover:text-primary transition-colors font-body-md text-body-md" href="#">Pricing</a>
-                <a class="text-secondary hover:text-primary transition-colors font-body-md text-body-md" href="#">Documentation</a>
-            </nav>
-            <button class="bg-primary text-on-primary px-lg py-xs rounded-xl hover:bg-surface-tint transition-all duration-200 ease-in-out font-label-md text-label-md">
-                Get Started
-            </button>
-        </div>
-    </header>
-    <main class="pt-16">
-        <!-- Hero Section -->
-        <section class="relative overflow-hidden pt-3xl pb-2xl hero-gradient">
-            <div class="max-w-[1440px] mx-auto px-margin-desktop grid md:grid-cols-2 gap-xl items-center">
-                <div class="z-10">
-                    <h1 class="font-headline-xl text-headline-xl mb-md">
-                        The PHP Framework for <span class="text-primary">Web Artisans</span>
-                    </h1>
-                    <p class="font-body-lg text-body-lg text-secondary mb-xl max-w-lg">
-                        Laravel adalah kerangka kerja aplikasi web dengan sintaks yang elegan dan ekspresif. Kami telah meletakkan dasar bagi Anda untuk membangun tanpa mengkhawatirkan hal-hal kecil.
-                    </p>
-                    <div class="flex flex-wrap gap-md">
-                        <button class="bg-primary text-on-primary px-xl py-sm rounded-xl font-label-md text-label-md hover:shadow-lg transition-all">
-                            Get Started
-                        </button>
-                        <button class="border border-outline text-on-surface px-xl py-sm rounded-xl font-label-md text-label-md hover:bg-surface-container transition-all">
-                            Documentation
-                        </button>
-                    </div>
-                </div>
-                <div class="relative group">
-                    <div class="absolute -inset-4 bg-primary-container/10 rounded-2xl blur-2xl group-hover:bg-primary-container/20 transition-all duration-700"></div>
-                    <img alt="Dashboard Interface" class="relative rounded-xl border border-outline-variant shadow-2xl" data-alt="A clean and professional software dashboard interface displayed on a high-resolution monitor. The UI features a minimalist aesthetic with a soft light-mode background, sophisticated data visualizations, and clear navigation sidebars. The lighting is bright and even, highlighting the meticulous alignment and professional blue color palette of the application design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBElPPuDqmOTY-ct8rSkkug6iE3xDBT8VjDVNtR1ymx28W_Uh3qWX4Qp6Nu1GBdI36W400j3YeVaTdAXd3XaCr3FFjD0QggoZPfBwsgOb0OnmLVpYLDDqa_t6zqH4oseBk6wNeALpcAmexDTCVuaWjusRJPJRZIuID8GBQNdfKrHg0uILroIxvHFjW5mLnhbRh0J80nsnuY0bYo974m7yZblHtqNppkLOqVbf_Kp934oJINhNoldaRT2ssSBjs2Bzt06MtRv1SePLY" />
-                </div>
-            </div>
-        </section>
-        <!-- Stats Section -->
-        <section class="bg-surface-container-low py-xl">
-            <div class="max-w-[1440px] mx-auto px-margin-desktop">
-                <div class="flex flex-wrap justify-around gap-xl items-center opacity-80">
-                    <div class="text-center">
-                        <div class="font-headline-md text-headline-md text-primary">100k+</div>
-                        <div class="font-label-sm text-label-sm text-secondary">Github Stars</div>
-                    </div>
-                    <div class="text-center">
-                        <div class="font-headline-md text-headline-md text-primary">1M+</div>
-                        <div class="font-label-sm text-label-sm text-secondary">Developers</div>
-                    </div>
-                    <div class="text-center">
-                        <div class="font-headline-md text-headline-md text-primary">20M+</div>
-                        <div class="font-label-sm text-label-sm text-secondary">Downloads/mo</div>
-                    </div>
-                    <div class="text-center">
-                        <div class="font-headline-md text-headline-md text-primary">#1</div>
-                        <div class="font-label-sm text-label-sm text-secondary">PHP Framework</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Features Section -->
-        <section class="py-3xl bg-surface">
-            <div class="max-w-[1440px] mx-auto px-margin-desktop">
-                <div class="text-center mb-2xl">
-                    <h2 class="font-headline-lg text-headline-lg mb-base">Mengapa Laravel?</h2>
-                    <div class="h-1 w-20 bg-primary mx-auto rounded-full"></div>
-                </div>
-                <div class="grid md:grid-cols-3 gap-lg">
-                    <!-- Feature 1 -->
-                    <div class="p-lg bg-surface-container-lowest border border-outline-variant rounded-xl hover:border-primary transition-all group">
-                        <div class="w-12 h-12 rounded-lg bg-secondary-container flex items-center justify-center mb-md group-hover:bg-primary group-hover:text-on-primary transition-colors">
-                            <span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
-                        </div>
-                        <h3 class="font-headline-sm text-headline-sm mb-sm">Elegant Syntax</h3>
-                        <p class="font-body-md text-body-md text-secondary">
-                            Sintaks yang bersih dan mudah dibaca memungkinkan pengembang untuk fokus pada logika bisnis daripada detail infrastruktur.
-                        </p>
-                    </div>
-                    <!-- Feature 2 -->
-                    <div class="p-lg bg-surface-container-lowest border border-outline-variant rounded-xl hover:border-primary transition-all group">
-                        <div class="w-12 h-12 rounded-lg bg-secondary-container flex items-center justify-center mb-md group-hover:bg-primary group-hover:text-on-primary transition-colors">
-                            <span class="material-symbols-outlined" data-icon="security">security</span>
-                        </div>
-                        <h3 class="font-headline-sm text-headline-sm mb-sm">Built-in Security</h3>
-                        <p class="font-body-md text-body-md text-secondary">
-                            Proteksi bawaan terhadap SQL injection, Cross-Site Scripting (XSS), dan Cross-Site Request Forgery (CSRF) menjaga aplikasi Anda tetap aman.
-                        </p>
-                    </div>
-                    <!-- Feature 3 -->
-                    <div class="p-lg bg-surface-container-lowest border border-outline-variant rounded-xl hover:border-primary transition-all group">
-                        <div class="w-12 h-12 rounded-lg bg-secondary-container flex items-center justify-center mb-md group-hover:bg-primary group-hover:text-on-primary transition-colors">
-                            <span class="material-symbols-outlined" data-icon="hub">hub</span>
-                        </div>
-                        <h3 class="font-headline-sm text-headline-sm mb-sm">Powerful Ecosystem</h3>
-                        <p class="font-body-md text-body-md text-secondary">
-                            Gunakan alat seperti Forge, Vapor, dan Nova untuk mempercepat pengembangan dan manajemen infrastruktur secara menyeluruh.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- CTA Section -->
-        <section class="py-3xl">
-            <div class="max-w-[1200px] mx-auto px-margin-desktop">
-                <div class="bg-inverse-surface rounded-2xl p-2xl text-center relative overflow-hidden">
-                    <!-- Decorative background element -->
-                    <div class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-64 h-64 bg-primary/20 blur-3xl rounded-full"></div>
-                    <div class="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/2 w-64 h-64 bg-primary-container/10 blur-3xl rounded-full"></div>
-                    <div class="relative z-10">
-                        <h2 class="font-headline-lg text-headline-lg text-inverse-on-surface mb-md">Siap membangun karya besar berikutnya?</h2>
-                        <p class="font-body-lg text-body-lg text-secondary-fixed-dim mb-xl max-w-2xl mx-auto">
-                            Bergabunglah dengan jutaan pengembang di seluruh dunia yang telah memilih Laravel untuk aplikasi mereka.
-                        </p>
-                        <button class="bg-primary text-on-primary px-3xl py-sm rounded-xl font-label-md text-label-md hover:bg-surface-tint transition-all hover:scale-105 active:scale-95">
-                            Start for Free
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-    <!-- Footer Section -->
-    <footer class="bg-surface-container-lowest py-xl border-t border-outline-variant">
-        <div class="max-w-[1440px] mx-auto px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-md">
-            <div class="flex flex-col gap-xs">
-                <div class="font-headline-sm text-headline-sm font-bold text-primary">LaravelApp</div>
-                <p class="font-body-sm text-body-sm text-secondary">© 2024 LaravelApp. All rights reserved.</p>
-            </div>
-            <div class="flex flex-wrap justify-center gap-lg">
-                <a class="text-secondary hover:text-primary transition-colors font-body-sm text-body-sm" href="#">Home</a>
-                <a class="text-secondary hover:text-primary transition-colors font-body-sm text-body-sm" href="#">Features</a>
-                <a class="text-secondary hover:text-primary transition-colors font-body-sm text-body-sm" href="#">Pricing</a>
-                <a class="text-secondary hover:text-primary transition-colors font-body-sm text-body-sm" href="#">Documentation</a>
-                <a class="text-secondary hover:text-primary transition-colors font-body-sm text-body-sm" href="#">Privacy</a>
-                <a class="text-secondary hover:text-primary transition-colors font-body-sm text-body-sm" href="#">Terms</a>
-            </div>
-        </div>
-    </footer>
-    <script>
-        // Simple micro-interaction for scroll effects
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            if (window.scrollY > 10) {
-                header.classList.add('shadow-md');
-            } else {
-                header.classList.remove('shadow-md');
             }
-        });
-    </script>
-</body>
+        </script>
+        <style>
+            .material-symbols-outlined {
+                font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            }
 
-</html>
+            .bento-grid {
+                display: grid;
+                grid-template-columns: repeat(12, 1fr);
+                gap: 24px;
+            }
+
+            .hero-mask {
+                clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+            }
+        </style>
+    </head>
+
+    <body class="bg-surface text-on-surface font-body-md selection:bg-primary selection:text-white overflow-x-hidden">
+        <main class="pt-20">
+            <!-- Hero Section -->
+            <section class="relative h-[716px] flex items-center bg-inverse-surface overflow-hidden">
+                <div class="absolute inset-0 opacity-40">
+                    <img class="w-full h-full object-cover" data-alt="A high-performance luxury sports car parked in a pristine, minimalist white architectural space with dramatic sharp shadows and bright natural light. The vehicle's metallic finish reflects the clinical precision of the showroom environment. The overall mood is one of quiet power and elite engineering excellence, dominated by a palette of cool greys and striking blacks." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfx3Qro52zeFvNGs7x_svL2NAc2ur_mT2azSnCYekeGvArF99aG2XcIQPEJfzD0db7gQ8N1MKqz-e5i6XzWOwF82RaYbdG2rEMQFTp2tDHKjqfVyb4XabD6EUrfrjLtrqK8laKeD65dOtgPrNm8dbRyTlJqcyxgdd_t9H35fHWwg_GgiTmQd0aqTFyH8FDatoZZ3mItyS9wf44I-J1G-163lVA5ZHOYuzxc8x1kiBkSA5zqmZveOTc0oPu9SKb2Vf1Qp__4GJdh114" />
+                </div>
+                <div class="max-w-[1280px] mx-auto px-gutter w-full relative z-10">
+                    <div class="max-w-2xl">
+                        <span class="font-label-sm text-label-sm text-primary uppercase tracking-[0.2em] mb-md block">Legacy of Excellence</span>
+                        <h1 class="font-display-lg text-display-lg text-on-primary mb-md leading-none">Redefining Automotive Engineering Since 1994.</h1>
+                        <p class="font-body-lg text-body-lg text-surface-container-highest max-w-lg">
+                            Elite Wheels is more than a dealership. We are the custodians of automotive performance, dedicated to the most discerning enthusiasts globally.
+                        </p>
+                    </div>
+                </div>
+                <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+                    <span class="material-symbols-outlined text-on-primary">expand_more</span>
+                </div>
+            </section>
+            <!-- History & Legacy (Asymmetric Layout) -->
+            <section class="py-xl bg-surface">
+                <div class="max-w-[1280px] mx-auto px-gutter">
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-lg items-center">
+                        <div class="md:col-span-5 space-y-md">
+                            <h2 class="font-headline-md text-headline-md text-on-surface">Precision in Every Mile.</h2>
+                            <div class="h-1 w-20 bg-primary"></div>
+                            <p class="font-body-md text-body-md text-secondary leading-relaxed">
+                                Founded in the heart of the automotive industry, Elite Wheels began as a specialized engineering consultancy. Our transition into the world's most exclusive retail environment was driven by a single vision: to bridge the gap between track-ready performance and road-legal luxury.
+                            </p>
+                            <p class="font-body-md text-body-md text-secondary leading-relaxed">
+                                Today, we stand as the definitive destination for high-performance vehicles, offering a curated selection of engineering marvels that represent the pinnacle of mechanical achievement.
+                            </p>
+                            <div class="pt-md grid grid-cols-2 gap-md">
+                                <div>
+                                    <span class="font-display-lg text-headline-md block text-primary font-bold">30+</span>
+                                    <span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Years Experience</span>
+                                </div>
+                                <div>
+                                    <span class="font-display-lg text-headline-md block text-primary font-bold">1.2k</span>
+                                    <span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Curated Sales</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="md:col-span-7 relative">
+                            <div class="aspect-[4/3] bg-surface-container rounded-lg overflow-hidden border border-outline-variant/10">
+                                <img class="w-full h-full object-cover" data-alt="Detailed close-up of a high-end supercar engine and carbon fiber chassis in a brightly lit, sterile technical workshop. The lighting is crisp and cool-toned, highlighting the metallic textures and precision components. The background is a clean white professional garage that feels like a laboratory. The aesthetic is strictly modern and technical." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDY3liI6As0xSgASr7Lyw31CqhKiv-t_JtYVunOC4AE2u7QDG_0axeyk9zOIYV4OrycOdYLICE0w9nRmESJqbcNJpUcsPpGkGEOyb2vZwTP6GfKKetXK2PeaK0VvcpswwxanzhUolIdz0W-gG9OoWGEPOnJz7vmzKRVz3nHTr9X-yDvuJSUs8wKc7FMyDh293by_24uYT_ApL_E5-Od8HqNdXJrS0g57X_-BaXrOZddnyx5PVfuu012QI89J-6J58UmyGkAE-LuBqXx" />
+                            </div>
+                            <div class="absolute -bottom-10 -left-10 hidden lg:block w-64 aspect-square border-8 border-surface bg-primary p-md flex flex-col justify-end">
+                                <span class="material-symbols-outlined text-white text-5xl mb-xs">verified</span>
+                                <p class="text-white font-label-sm text-label-sm font-bold uppercase tracking-widest">Certified Performance</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Team & Consultants (Bento Grid Style) -->
+            <section class="py-xl bg-surface-container-low">
+                <div class="max-w-[1280px] mx-auto px-gutter">
+                    <div class="text-center mb-xl">
+                        <h2 class="font-headline-md text-headline-md mb-xs">Expert Consultation</h2>
+                        <p class="font-body-md text-body-md text-secondary">The technical minds behind your next acquisition.</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-md">
+                        <!-- Head of Sales -->
+                        <div class="md:col-span-2 group relative overflow-hidden bg-white border border-outline-variant/20 rounded-lg">
+                            <div class="aspect-video overflow-hidden">
+                                <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="Portrait of a professional automotive executive in a sharp, tailored black suit standing in front of a sleek glass-walled office. The lighting is cinematic with high contrast, projecting authority and technical expertise. The color palette is muted with deep blacks, crisp whites, and a single red tie accent to align with the brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFZQuqtZcsKFTJ7Om71-_7V3IACznDIZ90j7Kqx6WTpi7n3IQG7adsakA6RyKEskVwXYclP0YaCr0VRVDsuI5ABhkMh-h-VBA4TBCNMEmDIhLHCsq-n3Y4Yr9m9j32s3VUGgXQvp8-Y8IHUkGPDyxv1dylRjIsbuCJc3YzJywTQGnXLM6md6f9mQo2tZdS0ruVd2bvx_em0ASE9_z2ryzvH0e2HQnKsuJs6OZKtqaQumeb2jEd5HSLN8zjl1-USqlROKpQWObDrnV6" />
+                            </div>
+                            <div class="p-md">
+                                <span class="font-label-sm text-label-sm text-primary uppercase">Executive Board</span>
+                                <h3 class="font-headline-md text-headline-md mt-xs">Marcus Van Der Braak</h3>
+                                <p class="text-secondary font-body-md">Chief Acquisition Officer</p>
+                            </div>
+                        </div>
+                        <!-- Team Member 1 -->
+                        <div class="group relative overflow-hidden bg-white border border-outline-variant/20 rounded-lg">
+                            <div class="aspect-square overflow-hidden">
+                                <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="A male technical automotive consultant looking thoughtfully into the distance, wearing a modern professional polo shirt with a subtle logo. The background is a soft-focus high-end showroom with blurred red accents from car lights. The atmosphere is professional, reliable, and sophisticated." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_X3XRjwGEk2yfepKZojL_cN3IeCaIjDeR2ux55hkl1gEpbAbRjFDWlt3Bcdtt6HDUVpUDQGlY_2JJHPE0kn8wHI1JrE9BpW1O9BU9tb5ZM879_VK2XDfq8cq7NNLkVya1080GRY8CF90L4BvdrAu_r6edl5kZ1H8gOl7KtMaKbQNfWpr4YqdGeSbcrLp5BOQNfwMVARh1W8ijxIee0dtBMIayX069pgfxH_VQzsZS-toVX3EJJJGSQweX369dSXIgy-X_9W0yXGu-" />
+                            </div>
+                            <div class="p-md">
+                                <h4 class="font-label-sm text-label-sm font-bold">David Chen</h4>
+                                <p class="text-secondary text-[10px] uppercase tracking-tighter">Performance Specialist</p>
+                            </div>
+                        </div>
+                        <!-- Team Member 2 -->
+                        <div class="group relative overflow-hidden bg-white border border-outline-variant/20 rounded-lg">
+                            <div class="aspect-square overflow-hidden">
+                                <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="A professional female finance consultant in a minimalist white office setting. She is wearing a grey tailored blazer and has a confident, welcoming expression. The lighting is bright and airy, symbolizing transparency and trust. The overall look is modern and high-end corporate." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGmFBPx_00C1rj9Wk6RAC9QpoKxUQuTi91oYt0D0MuvJ_npFhvj_F0HK2nji4DNk35tcfBZh4LtSGNkv_j1BYGfKdaHJln_B7PpOqcTpe-1vVhRiYpeCzQd79nSkb9Xm9G3-UBJ03yNzHiTk0x01mSb-0pPXf4gjtnbwQ3evcCTGKu0IknPsRWLN0gkWlmUCDg1k6Tk2shf3nKWLJdqmq0FeFaMT6fYw706t1RmI0kli_Gbc2TkEmmU5h4-IZnBW_SI55gMljOyLik" />
+                            </div>
+                            <div class="p-md">
+                                <h4 class="font-label-sm text-label-sm font-bold">Elena Rossi</h4>
+                                <p class="text-secondary text-[10px] uppercase tracking-tighter">Financing Lead</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Showroom Gallery (Grid) -->
+            <section class="py-xl bg-white">
+                <div class="max-w-[1280px] mx-auto px-gutter">
+                    <div class="flex flex-col md:flex-row justify-between items-end mb-xl gap-md">
+                        <div class="max-w-xl">
+                            <h2 class="font-headline-md text-headline-md mb-xs">The Showroom.</h2>
+                            <p class="font-body-md text-body-md text-secondary">A space engineered to showcase the absolute peak of automotive design.</p>
+                        </div>
+                        <button class="flex items-center gap-xs font-label-sm text-label-sm text-primary font-bold group">
+                            VIEW VIRTUAL TOUR
+                            <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                        </button>
+                    </div>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-md">
+                        <div class="col-span-2 row-span-2 group relative overflow-hidden rounded-lg">
+                            <img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" data-alt="Wide angle shot of a massive, ultra-modern automotive showroom with white polished floors that reflect the bright overhead LED panel lighting. Several exotic cars are arranged as art pieces. The architecture is sharp and angular, with glass walls looking out onto a modern cityscape at dusk. The palette is dominated by whites, grays, and the vibrant red glow of taillights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCx5gvdeLBwGgYWDytxS81d1xvqiCdetcP2SjS8BCy3z2Da09eQbbBgl576eyG_f7Ca00_TaMq9Rz9PXFd2klig6GvG5aOouRiUUxhwjyEQ7in-z2hKNiY3vM2e-RCI-C8hXzIPdNoYRFHIx2frukv1pnx4Yl-GnfgBphhrUBAqf6IeH4zpHWykVcJhvIRgKE0QKrvZtZ9wYqhOX83gy5kxQZW8LvNXaCG4WGLdYoE6VXFPY_eYozxBqAEOZGIYzPTjzRMD8xKLaCzx" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-md">
+                                <p class="text-white font-label-sm text-label-sm">Main Exhibit Hall</p>
+                            </div>
+                        </div>
+                        <div class="aspect-square group relative overflow-hidden rounded-lg">
+                            <img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" data-alt="Interior shot of a luxury car's leather seating and dashboard, showcasing intricate red stitching against high-quality black leather. The focus is sharp, highlighting the premium craftsmanship and tactile quality. The lighting is focused and warm, creating a sense of intimate luxury and high-end engineering detail." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDf2qVgTaQ8vxo1iommVcuIf-XzkdajU_dTjzTImv9pYyZMCqQaQmH3GIValZ0Zkq6Gnj-0a7lFaeTN-4C6I3mog-XMnpR4tdhOfAlaaKz8KV_rAo8QyL2-6t5ZGndfP0G0XMJba3DduN-9Gc0CeSvTkjzEUoRMmnUsswJy4OPZnzL-alqZ1kvmKnlUTHi1qRg_LL7jkm4Awy_h6rvOR-TOf6aDA022u-t-Eh3PNNw-U20ixb6wB7NnJVHjHafxnnSbYNzIqiTjvEgj" />
+                        </div>
+                        <div class="aspect-square group relative overflow-hidden rounded-lg">
+                            <img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" data-alt="A sleek black sports car silhouette captured against a bright, clinical white background. The car's lines are illuminated by a single overhead rim light, emphasizing its aerodynamic form. This minimalist composition reflects the brand's focus on precision and modern aesthetics." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRWVqJULRohtmRj35G7mU6d59M9dxpBNnBgszTQTb7ImeG9ubgJ0yXNeb7WtLINqPZoe8xl5VcvMoIyZmsGoWZAO_l0VwRJMh49PTuTkMtJ4sjITOtS0uehHzl0uGdaobmRjmUOYyTbJjFlZkNo1fF7tg25YtreT1tqdlJ4-7cZk_569BGcE-k57VRXVoTnuJ2yTA6xMueudBx1LGK55MAFkcGroFjkjILKAerhj1M2w3yUVim9KW6jitsAnw05p7cnScqcc0iACnh" />
+                        </div>
+                        <div class="col-span-2 aspect-[2/1] group relative overflow-hidden rounded-lg">
+                            <img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" data-alt="An expansive view of a professional service bay at the Elite Wheels facility. The floors are a spotless light grey epoxy, and tools are neatly organized on minimalist matte black racks. A red supercar is elevated on a lift, being attended to by technicians in clean uniforms. The lighting is bright, shadowless, and professional, suggesting technical perfection." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCL3NPf3zcQ0LimYOewxY4--isqafUN6hSbrZvkbRHBZ2pKgHMZRKNArg8vnFcSBrNjLJ68zoH_dX9gk_WyL6YQ8q7cD0-Tb1_ZA9iVbmnt_IuXLTwyNvlLmXgHU07bQOEMBBlNj9Mri_P18htikWUCdP5VQWRqzo7MmXsHXkkb2IK_JtCzwIKIB4u6o3hGNdbgg1uWH-gd8Oqu4BV_NmnFOxsUO9eCDChTMCdkBiK2wiW1h5xX6mKP_OhEMoQU4gNg8lJtkslQcEwG" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-md">
+                                <p class="text-white font-label-sm text-label-sm">Master Service Bay</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Call to Action -->
+            <section class="py-xl bg-inverse-surface text-center">
+                <div class="max-w-2xl mx-auto px-gutter">
+                    <h2 class="font-display-lg text-display-lg text-on-primary mb-md">Ready for the Next Chapter?</h2>
+                    <div class="flex flex-col md:flex-row gap-md justify-center">
+                        <button class="px-xl py-md bg-primary text-white font-label-sm text-label-sm rounded-lg hover:bg-on-primary-fixed-variant transition-all active:scale-95">
+                            Schedule Consultation
+                        </button>
+                        <button class="px-xl py-md border border-outline text-white font-label-sm text-label-sm rounded-lg hover:bg-white/10 transition-all active:scale-95">
+                            Explore Inventory
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <script>
+            // Micro-interactions and scroll effects
+            document.addEventListener('DOMContentLoaded', () => {
+                const observerOptions = {
+                    threshold: 0.1
+                };
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('opacity-100', 'translate-y-0');
+                            entry.target.classList.remove('opacity-0', 'translate-y-10');
+                        }
+                    });
+                }, observerOptions);
+
+                // Animate on scroll for sections
+                document.querySelectorAll('section').forEach(section => {
+                    section.classList.add('transition-all', 'duration-1000', 'ease-out');
+                });
+            });
+
+            // Sticky header color change on scroll
+            window.addEventListener('scroll', () => {
+                const header = document.querySelector('header');
+                if (window.scrollY > 50) {
+                    header.classList.add('shadow-sm', 'bg-white/95', 'backdrop-blur-md');
+                } else {
+                    header.classList.remove('shadow-sm', 'bg-white/95', 'backdrop-blur-md');
+                }
+            });
+        </script>
+    </body>
+
+    </html>
+</div>
 @endsection
