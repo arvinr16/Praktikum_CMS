@@ -1,328 +1,193 @@
 @extends('layouts.front')
 @section('content')
-<div id="home">
-    <!DOCTYPE html>
-
-    <html class="light" lang="en">
-
-    <head>
-        <meta charset="utf-8" />
-        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-        <title>Elite Wheels | Engineered for Excellence</title>
-        <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-        <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
-        <script id="tailwind-config">
-            tailwind.config = {
-                darkMode: "class",
-                theme: {
-                    extend: {
-                        "colors": {
-                            "tertiary-fixed-dim": "#a7c8ff",
-                            "inverse-surface": "#2e3132",
-                            "on-secondary-fixed": "#1c1b1b",
-                            "on-background": "#191c1d",
-                            "surface-container-highest": "#e1e3e4",
-                            "outline": "#936e69",
-                            "on-primary-container": "#fff5f3",
-                            "on-surface": "#191c1d",
-                            "on-secondary-container": "#636262",
-                            "inverse-on-surface": "#f0f1f2",
-                            "surface-container-high": "#e7e8e9",
-                            "on-error-container": "#93000a",
-                            "on-tertiary": "#ffffff",
-                            "on-primary": "#ffffff",
-                            "on-error": "#ffffff",
-                            "on-secondary": "#ffffff",
-                            "on-primary-fixed-variant": "#930007",
-                            "secondary-container": "#e2dfde",
-                            "surface": "#f8f9fa",
-                            "secondary": "#5f5e5e",
-                            "on-primary-fixed": "#410001",
-                            "background": "#f8f9fa",
-                            "error": "#ba1a1a",
-                            "surface-container": "#edeeef",
-                            "surface-container-lowest": "#ffffff",
-                            "on-tertiary-container": "#f5f7ff",
-                            "on-secondary-fixed-variant": "#474746",
-                            "surface-container-low": "#f3f4f5",
-                            "secondary-fixed-dim": "#c8c6c5",
-                            "tertiary-container": "#0071d4",
-                            "inverse-primary": "#ffb4aa",
-                            "primary-container": "#e30613",
-                            "surface-variant": "#e1e3e4",
-                            "tertiary": "#0059a8",
-                            "error-container": "#ffdad6",
-                            "secondary-fixed": "#e5e2e1",
-                            "surface-bright": "#f8f9fa",
-                            "on-surface-variant": "#5e3f3b",
-                            "tertiary-fixed": "#d5e3ff",
-                            "primary": "#b5000b",
-                            "surface-dim": "#d9dadb",
-                            "on-tertiary-fixed-variant": "#004788",
-                            "outline-variant": "#e9bcb6",
-                            "primary-fixed-dim": "#ffb4aa",
-                            "primary-fixed": "#ffdad5",
-                            "on-tertiary-fixed": "#001b3c",
-                            "surface-tint": "#c0000c"
-                        },
-                        "borderRadius": {
-                            "DEFAULT": "0.125rem",
-                            "lg": "0.25rem",
-                            "xl": "0.5rem",
-                            "full": "0.75rem"
-                        },
-                        "spacing": {
-                            "gutter": "24px",
-                            "margin-desktop": "64px",
-                            "base": "8px",
-                            "margin-mobile": "16px",
-                            "lg": "48px",
-                            "sm": "12px",
-                            "xs": "4px",
-                            "md": "24px",
-                            "xl": "80px"
-                        },
-                        "fontFamily": {
-                            "body-md": ["Inter"],
-                            "display-lg-mobile": ["Hanken Grotesk"],
-                            "headline-md": ["Hanken Grotesk"],
-                            "label-sm": ["JetBrains Mono"],
-                            "display-lg": ["Hanken Grotesk"],
-                            "body-lg": ["Inter"]
-                        },
-                        "fontSize": {
-                            "body-md": ["16px", {
-                                "lineHeight": "24px",
-                                "fontWeight": "400"
-                            }],
-                            "display-lg-mobile": ["32px", {
-                                "lineHeight": "40px",
-                                "letterSpacing": "-0.01em",
-                                "fontWeight": "700"
-                            }],
-                            "headline-md": ["24px", {
-                                "lineHeight": "32px",
-                                "fontWeight": "600"
-                            }],
-                            "label-sm": ["12px", {
-                                "lineHeight": "16px",
-                                "fontWeight": "500"
-                            }],
-                            "display-lg": ["48px", {
-                                "lineHeight": "56px",
-                                "letterSpacing": "-0.02em",
-                                "fontWeight": "700"
-                            }],
-                            "body-lg": ["18px", {
-                                "lineHeight": "28px",
-                                "fontWeight": "400"
-                            }]
-                        }
-                    },
-                },
-            }
-        </script>
-        <style>
-            .material-symbols-outlined {
-                font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-            }
-
-            .bento-grid {
-                display: grid;
-                grid-template-columns: repeat(12, 1fr);
-                gap: 24px;
-            }
-
-            .hero-mask {
-                clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
-            }
-        </style>
-    </head>
-
-    <body class="bg-surface text-on-surface font-body-md selection:bg-primary selection:text-white overflow-x-hidden">
-        <main class="pt-20">
-            <!-- Hero Section -->
-            <section class="relative h-[716px] flex items-center bg-inverse-surface overflow-hidden">
-                <div class="absolute inset-0 opacity-40">
-                    <img class="w-full h-full object-cover" data-alt="A high-performance luxury sports car parked in a pristine, minimalist white architectural space with dramatic sharp shadows and bright natural light. The vehicle's metallic finish reflects the clinical precision of the showroom environment. The overall mood is one of quiet power and elite engineering excellence, dominated by a palette of cool greys and striking blacks." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfx3Qro52zeFvNGs7x_svL2NAc2ur_mT2azSnCYekeGvArF99aG2XcIQPEJfzD0db7gQ8N1MKqz-e5i6XzWOwF82RaYbdG2rEMQFTp2tDHKjqfVyb4XabD6EUrfrjLtrqK8laKeD65dOtgPrNm8dbRyTlJqcyxgdd_t9H35fHWwg_GgiTmQd0aqTFyH8FDatoZZ3mItyS9wf44I-J1G-163lVA5ZHOYuzxc8x1kiBkSA5zqmZveOTc0oPu9SKb2Vf1Qp__4GJdh114" />
-                </div>
-                <div class="max-w-[1280px] mx-auto px-gutter w-full relative z-10">
-                    <div class="max-w-2xl">
-                        <span class="font-label-sm text-label-sm text-primary uppercase tracking-[0.2em] mb-md block">Legacy of Excellence</span>
-                        <h1 class="font-display-lg text-display-lg text-on-primary mb-md leading-none">Redefining Automotive Engineering Since 1994.</h1>
-                        <p class="font-body-lg text-body-lg text-surface-container-highest max-w-lg">
-                            Elite Wheels is more than a dealership. We are the custodians of automotive performance, dedicated to the most discerning enthusiasts globally.
-                        </p>
-                    </div>
-                </div>
-                <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
-                    <span class="material-symbols-outlined text-on-primary">expand_more</span>
-                </div>
-            </section>
-            <!-- History & Legacy (Asymmetric Layout) -->
-            <section class="py-xl bg-surface">
-                <div class="max-w-[1280px] mx-auto px-gutter">
-                    <div class="grid grid-cols-1 md:grid-cols-12 gap-lg items-center">
-                        <div class="md:col-span-5 space-y-md">
-                            <h2 class="font-headline-md text-headline-md text-on-surface">Precision in Every Mile.</h2>
-                            <div class="h-1 w-20 bg-primary"></div>
-                            <p class="font-body-md text-body-md text-secondary leading-relaxed">
-                                Founded in the heart of the automotive industry, Elite Wheels began as a specialized engineering consultancy. Our transition into the world's most exclusive retail environment was driven by a single vision: to bridge the gap between track-ready performance and road-legal luxury.
-                            </p>
-                            <p class="font-body-md text-body-md text-secondary leading-relaxed">
-                                Today, we stand as the definitive destination for high-performance vehicles, offering a curated selection of engineering marvels that represent the pinnacle of mechanical achievement.
-                            </p>
-                            <div class="pt-md grid grid-cols-2 gap-md">
-                                <div>
-                                    <span class="font-display-lg text-headline-md block text-primary font-bold">30+</span>
-                                    <span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Years Experience</span>
-                                </div>
-                                <div>
-                                    <span class="font-display-lg text-headline-md block text-primary font-bold">1.2k</span>
-                                    <span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Curated Sales</span>
-                                </div>
-                            </div>
+<section class="py-section-gap px-margin-desktop max-w-container-max mx-auto">
+    <div class="flex justify-between items-end mb-16">
+        <div>
+            <span class="font-label-sm text-label-sm text-tertiary uppercase">Curated Selection</span>
+            <h2 class="font-headline-xl text-headline-xl mt-2 uppercase">Featured Collection</h2>
+        </div>
+        <a class="font-body-md text-primary flex items-center gap-2 group" href="#">
+            View All Vehicles
+            <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+        </a>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+        <!-- Large Card -->
+        <div class="md:col-span-8 group cursor-pointer overflow-hidden rounded-xl bg-surface-container border border-outline-variant transition-all hover:border-primary/50">
+            <div class="aspect-[21/9] overflow-hidden">
+                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A front three-quarter view of a black Ferrari F8 Tributo in a high-tech, monochromatic garage setting with glowing LED light strips on the ceiling. The car's aggressive stance and carbon fiber details are highlighted by sharp, crisp reflections. The mood is intense and futuristic, adhering to a minimalist luxury aesthetic with a focus on metallic textures and precision engineering." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbuXdfacCQ1X8MpJPEBUYDnAf-o5cJTcPfHZ1kNMSZxOBg_OAkMl336A7Kv6LtDg6K5yaFYONeN4It2oqEessuQJ44H2v3Fuz2tQuGtDmzCKgPzzztvjOYF73Cn9r0OphaNYBo3Et4l0zAj7-ffsxVGhjcLP3bp6q3GT4ESHT4EqIL-9vZuMT17wE7AxW0uPcICqlzbF_m0jO8NlkaYRtNAjjswkZ992UVLM5CyEb_VIZtezE-qeV2Emarwj9Q9eamiA7gtukf1Yc" />
+            </div>
+            <div class="p-8 flex justify-between items-center">
+                <div>
+                    <h3 class="font-headline-md text-headline-md uppercase">F8 Tributo '23</h3>
+                    <div class="flex gap-8 mt-4">
+                        <div class="flex flex-col">
+                            <span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Engine</span>
+                            <span class="font-body-md text-body-md font-semibold">3.9L V8 Bi-Turbo</span>
                         </div>
-                        <div class="md:col-span-7 relative">
-                            <div class="aspect-[4/3] bg-surface-container rounded-lg overflow-hidden border border-outline-variant/10">
-                                <img class="w-full h-full object-cover" data-alt="Detailed close-up of a high-end supercar engine and carbon fiber chassis in a brightly lit, sterile technical workshop. The lighting is crisp and cool-toned, highlighting the metallic textures and precision components. The background is a clean white professional garage that feels like a laboratory. The aesthetic is strictly modern and technical." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDY3liI6As0xSgASr7Lyw31CqhKiv-t_JtYVunOC4AE2u7QDG_0axeyk9zOIYV4OrycOdYLICE0w9nRmESJqbcNJpUcsPpGkGEOyb2vZwTP6GfKKetXK2PeaK0VvcpswwxanzhUolIdz0W-gG9OoWGEPOnJz7vmzKRVz3nHTr9X-yDvuJSUs8wKc7FMyDh293by_24uYT_ApL_E5-Od8HqNdXJrS0g57X_-BaXrOZddnyx5PVfuu012QI89J-6J58UmyGkAE-LuBqXx" />
-                            </div>
-                            <div class="absolute -bottom-10 -left-10 hidden lg:block w-64 aspect-square border-8 border-surface bg-primary p-md flex flex-col justify-end">
-                                <span class="material-symbols-outlined text-white text-5xl mb-xs">verified</span>
-                                <p class="text-white font-label-sm text-label-sm font-bold uppercase tracking-widest">Certified Performance</p>
-                            </div>
+                        <div class="flex flex-col">
+                            <span class="font-label-sm text-label-sm text-on-surface-variant uppercase">0-100 km/h</span>
+                            <span class="font-body-md text-body-md font-semibold">2.9 Seconds</span>
                         </div>
                     </div>
                 </div>
-            </section>
-            <!-- Team & Consultants (Bento Grid Style) -->
-            <section class="py-xl bg-surface-container-low">
-                <div class="max-w-[1280px] mx-auto px-gutter">
-                    <div class="text-center mb-xl">
-                        <h2 class="font-headline-md text-headline-md mb-xs">Expert Consultation</h2>
-                        <p class="font-body-md text-body-md text-secondary">The technical minds behind your next acquisition.</p>
+                <div class="text-right">
+                    <span class="font-label-sm text-label-sm text-tertiary uppercase mb-1 block">Starting At</span>
+                    <span class="font-headline-md text-headline-md text-primary">$325,000</span>
+                </div>
+            </div>
+        </div>
+        <!-- Small Card 1 -->
+        <div class="md:col-span-4 group cursor-pointer overflow-hidden rounded-xl bg-surface-container border border-outline-variant transition-all hover:border-primary/50">
+            <div class="aspect-square overflow-hidden">
+                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Detailed close-up shot of the rear wing and taillights of a dark grey Porsche 911 Turbo S. The intricate design of the active aerodynamics and the glowing red LED light bar are captured with high precision. The lighting is dramatic, casting deep shadows while illuminating the metallic flakes in the paint, creating a moody and sophisticated technical atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJQF4JZBQCqs1ruNtLNm0WseBy6_asgILXFlG6Zg4S9Ijg9lmpFS4WXvxDvfpgbpZ6OxM0P68u8ZFdEHmdcjbF5z7bg0XgMsfDDSqtN-yTDysEIhQMKhndu2pMvTCQeSQTC0utKhRpLWVU09P0vH2YHF66SaVTNHAv1Wz53DQz3Mr5uwwbVAgTbt5zIyh78d8KXkNIiRHT_uuHgAJundDfolL0y38tX2g3NBVLegrYYGoBPXULd1t8pHqrPeN3jpoz0CR6GiAHxYg" />
+            </div>
+            <div class="p-6">
+                <h3 class="font-body-lg text-body-lg font-bold uppercase">911 Turbo S</h3>
+                <div class="flex justify-between items-end mt-4">
+                    <span class="font-body-md text-body-md text-on-surface-variant">2.7s to 100km/h</span>
+                    <span class="font-body-lg text-body-lg text-primary font-bold">$230,000</span>
+                </div>
+            </div>
+        </div>
+        <!-- Small Card 2 -->
+        <div class="md:col-span-4 group cursor-pointer overflow-hidden rounded-xl bg-surface-container border border-outline-variant transition-all hover:border-primary/50">
+            <div class="aspect-square overflow-hidden">
+                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A modern electric grand tourer, the Taycan Turbo S, finished in frozen metallic blue. The car is positioned on a wet asphalt surface at night, reflecting ambient neon lights. The aesthetic is clean, sustainable luxury, with a focus on smooth lines and futuristic design elements. High-contrast lighting with a dark obsidian background and soft blue highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBC5o_PX8noamiRtcpfKEdXp-972O5GBIDOa-JkeYufq304NYO7k6CIzpO3uLE0c45508TxfPf7FC_1ZfAqlY5LehodnwMWPUVE43Ocw1EMAM-8JLhx5AjR2lWp5mrp0oKsCFUXnctWdFZCSuoNALFFb7evt7E26NX2wADuelowo47rH_Liopt5W4fApd5ClFVE0QTe0z9ql50S2mRpgyUtCHrXb8Qq0FfwSiBHoBOHnBE8z43UjfZPIK_tVfwKPMBcxi-rvW7o8YA" />
+            </div>
+            <div class="p-6">
+                <h3 class="font-body-lg text-body-lg font-bold uppercase">Taycan Turbo S</h3>
+                <div class="flex justify-between items-end mt-4">
+                    <span class="font-body-md text-body-md text-on-surface-variant">750hp Electric</span>
+                    <span class="font-body-lg text-body-lg text-primary font-bold">$194,000</span>
+                </div>
+            </div>
+        </div>
+        <!-- Wide Secondary Card -->
+        <div class="md:col-span-8 group cursor-pointer overflow-hidden rounded-xl bg-surface-container border border-outline-variant transition-all hover:border-primary/50 flex flex-col md:flex-row">
+            <div class="w-full md:w-1/2 aspect-square md:aspect-auto overflow-hidden">
+                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A front-facing view of a midnight black Lamborghini Huracan STO. The car's aggressive vents and racing-derived carbon fiber components are sharp and clearly defined against a neutral grey studio background. The lighting is professional and cold, highlighting the car's extreme performance character and luxurious carbon finishes." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIGVavIM3lTcQZLllwQqXpMe8Ilx0RWGtX-n3e1HSYFgnBiX9TXkiE5d7iPv4KmKqA1BK1PHoB-WDY9pdxFhA1mbyA0rfMW5rKrADC5prnsbVpVs3DZVB8TZR7Xz_r8NR7WQcxp47pFi-CWw5J9JDSiW0f8t1GVqOyEnZBDDtxpHXd8QJUzmB33QFqwvCwVa8WgW3tzszFtw63ctSlVzr8JlUN5IyAFa_AZVf7DRzjyBVXvIVKtHXILQf9S1manKl_dEDyGJV_RYo" />
+            </div>
+            <div class="w-full md:w-1/2 p-10 flex flex-col justify-center">
+                <h3 class="font-headline-md text-headline-md uppercase mb-4">Huracán STO</h3>
+                <p class="font-body-md text-body-md text-on-surface-variant mb-6">A track-focused masterpiece designed for the purists. Extreme aerodynamics meet V10 soul.</p>
+                <div class="grid grid-cols-2 gap-4 mb-8">
+                    <div>
+                        <span class="font-label-sm text-label-sm text-tertiary uppercase block">Top Speed</span>
+                        <span class="font-body-lg text-body-lg font-bold">310 km/h</span>
                     </div>
-                    <div class="grid grid-cols-1 md:grid-cols-4 gap-md">
-                        <!-- Head of Sales -->
-                        <div class="md:col-span-2 group relative overflow-hidden bg-white border border-outline-variant/20 rounded-lg">
-                            <div class="aspect-video overflow-hidden">
-                                <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="Portrait of a professional automotive executive in a sharp, tailored black suit standing in front of a sleek glass-walled office. The lighting is cinematic with high contrast, projecting authority and technical expertise. The color palette is muted with deep blacks, crisp whites, and a single red tie accent to align with the brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFZQuqtZcsKFTJ7Om71-_7V3IACznDIZ90j7Kqx6WTpi7n3IQG7adsakA6RyKEskVwXYclP0YaCr0VRVDsuI5ABhkMh-h-VBA4TBCNMEmDIhLHCsq-n3Y4Yr9m9j32s3VUGgXQvp8-Y8IHUkGPDyxv1dylRjIsbuCJc3YzJywTQGnXLM6md6f9mQo2tZdS0ruVd2bvx_em0ASE9_z2ryzvH0e2HQnKsuJs6OZKtqaQumeb2jEd5HSLN8zjl1-USqlROKpQWObDrnV6" />
-                            </div>
-                            <div class="p-md">
-                                <span class="font-label-sm text-label-sm text-primary uppercase">Executive Board</span>
-                                <h3 class="font-headline-md text-headline-md mt-xs">Marcus Van Der Braak</h3>
-                                <p class="text-secondary font-body-md">Chief Acquisition Officer</p>
-                            </div>
-                        </div>
-                        <!-- Team Member 1 -->
-                        <div class="group relative overflow-hidden bg-white border border-outline-variant/20 rounded-lg">
-                            <div class="aspect-square overflow-hidden">
-                                <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="A male technical automotive consultant looking thoughtfully into the distance, wearing a modern professional polo shirt with a subtle logo. The background is a soft-focus high-end showroom with blurred red accents from car lights. The atmosphere is professional, reliable, and sophisticated." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_X3XRjwGEk2yfepKZojL_cN3IeCaIjDeR2ux55hkl1gEpbAbRjFDWlt3Bcdtt6HDUVpUDQGlY_2JJHPE0kn8wHI1JrE9BpW1O9BU9tb5ZM879_VK2XDfq8cq7NNLkVya1080GRY8CF90L4BvdrAu_r6edl5kZ1H8gOl7KtMaKbQNfWpr4YqdGeSbcrLp5BOQNfwMVARh1W8ijxIee0dtBMIayX069pgfxH_VQzsZS-toVX3EJJJGSQweX369dSXIgy-X_9W0yXGu-" />
-                            </div>
-                            <div class="p-md">
-                                <h4 class="font-label-sm text-label-sm font-bold">David Chen</h4>
-                                <p class="text-secondary text-[10px] uppercase tracking-tighter">Performance Specialist</p>
-                            </div>
-                        </div>
-                        <!-- Team Member 2 -->
-                        <div class="group relative overflow-hidden bg-white border border-outline-variant/20 rounded-lg">
-                            <div class="aspect-square overflow-hidden">
-                                <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="A professional female finance consultant in a minimalist white office setting. She is wearing a grey tailored blazer and has a confident, welcoming expression. The lighting is bright and airy, symbolizing transparency and trust. The overall look is modern and high-end corporate." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGmFBPx_00C1rj9Wk6RAC9QpoKxUQuTi91oYt0D0MuvJ_npFhvj_F0HK2nji4DNk35tcfBZh4LtSGNkv_j1BYGfKdaHJln_B7PpOqcTpe-1vVhRiYpeCzQd79nSkb9Xm9G3-UBJ03yNzHiTk0x01mSb-0pPXf4gjtnbwQ3evcCTGKu0IknPsRWLN0gkWlmUCDg1k6Tk2shf3nKWLJdqmq0FeFaMT6fYw706t1RmI0kli_Gbc2TkEmmU5h4-IZnBW_SI55gMljOyLik" />
-                            </div>
-                            <div class="p-md">
-                                <h4 class="font-label-sm text-label-sm font-bold">Elena Rossi</h4>
-                                <p class="text-secondary text-[10px] uppercase tracking-tighter">Financing Lead</p>
-                            </div>
-                        </div>
+                    <div>
+                        <span class="font-label-sm text-label-sm text-tertiary uppercase block">Weight</span>
+                        <span class="font-body-lg text-body-lg font-bold">1,339 kg</span>
                     </div>
                 </div>
-            </section>
-            <!-- Showroom Gallery (Grid) -->
-            <section class="py-xl bg-white">
-                <div class="max-w-[1280px] mx-auto px-gutter">
-                    <div class="flex flex-col md:flex-row justify-between items-end mb-xl gap-md">
-                        <div class="max-w-xl">
-                            <h2 class="font-headline-md text-headline-md mb-xs">The Showroom.</h2>
-                            <p class="font-body-md text-body-md text-secondary">A space engineered to showcase the absolute peak of automotive design.</p>
-                        </div>
-                        <button class="flex items-center gap-xs font-label-sm text-label-sm text-primary font-bold group">
-                            VIEW VIRTUAL TOUR
-                            <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
-                        </button>
-                    </div>
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-md">
-                        <div class="col-span-2 row-span-2 group relative overflow-hidden rounded-lg">
-                            <img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" data-alt="Wide angle shot of a massive, ultra-modern automotive showroom with white polished floors that reflect the bright overhead LED panel lighting. Several exotic cars are arranged as art pieces. The architecture is sharp and angular, with glass walls looking out onto a modern cityscape at dusk. The palette is dominated by whites, grays, and the vibrant red glow of taillights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCx5gvdeLBwGgYWDytxS81d1xvqiCdetcP2SjS8BCy3z2Da09eQbbBgl576eyG_f7Ca00_TaMq9Rz9PXFd2klig6GvG5aOouRiUUxhwjyEQ7in-z2hKNiY3vM2e-RCI-C8hXzIPdNoYRFHIx2frukv1pnx4Yl-GnfgBphhrUBAqf6IeH4zpHWykVcJhvIRgKE0QKrvZtZ9wYqhOX83gy5kxQZW8LvNXaCG4WGLdYoE6VXFPY_eYozxBqAEOZGIYzPTjzRMD8xKLaCzx" />
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-md">
-                                <p class="text-white font-label-sm text-label-sm">Main Exhibit Hall</p>
-                            </div>
-                        </div>
-                        <div class="aspect-square group relative overflow-hidden rounded-lg">
-                            <img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" data-alt="Interior shot of a luxury car's leather seating and dashboard, showcasing intricate red stitching against high-quality black leather. The focus is sharp, highlighting the premium craftsmanship and tactile quality. The lighting is focused and warm, creating a sense of intimate luxury and high-end engineering detail." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDf2qVgTaQ8vxo1iommVcuIf-XzkdajU_dTjzTImv9pYyZMCqQaQmH3GIValZ0Zkq6Gnj-0a7lFaeTN-4C6I3mog-XMnpR4tdhOfAlaaKz8KV_rAo8QyL2-6t5ZGndfP0G0XMJba3DduN-9Gc0CeSvTkjzEUoRMmnUsswJy4OPZnzL-alqZ1kvmKnlUTHi1qRg_LL7jkm4Awy_h6rvOR-TOf6aDA022u-t-Eh3PNNw-U20ixb6wB7NnJVHjHafxnnSbYNzIqiTjvEgj" />
-                        </div>
-                        <div class="aspect-square group relative overflow-hidden rounded-lg">
-                            <img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" data-alt="A sleek black sports car silhouette captured against a bright, clinical white background. The car's lines are illuminated by a single overhead rim light, emphasizing its aerodynamic form. This minimalist composition reflects the brand's focus on precision and modern aesthetics." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRWVqJULRohtmRj35G7mU6d59M9dxpBNnBgszTQTb7ImeG9ubgJ0yXNeb7WtLINqPZoe8xl5VcvMoIyZmsGoWZAO_l0VwRJMh49PTuTkMtJ4sjITOtS0uehHzl0uGdaobmRjmUOYyTbJjFlZkNo1fF7tg25YtreT1tqdlJ4-7cZk_569BGcE-k57VRXVoTnuJ2yTA6xMueudBx1LGK55MAFkcGroFjkjILKAerhj1M2w3yUVim9KW6jitsAnw05p7cnScqcc0iACnh" />
-                        </div>
-                        <div class="col-span-2 aspect-[2/1] group relative overflow-hidden rounded-lg">
-                            <img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" data-alt="An expansive view of a professional service bay at the Elite Wheels facility. The floors are a spotless light grey epoxy, and tools are neatly organized on minimalist matte black racks. A red supercar is elevated on a lift, being attended to by technicians in clean uniforms. The lighting is bright, shadowless, and professional, suggesting technical perfection." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCL3NPf3zcQ0LimYOewxY4--isqafUN6hSbrZvkbRHBZ2pKgHMZRKNArg8vnFcSBrNjLJ68zoH_dX9gk_WyL6YQ8q7cD0-Tb1_ZA9iVbmnt_IuXLTwyNvlLmXgHU07bQOEMBBlNj9Mri_P18htikWUCdP5VQWRqzo7MmXsHXkkb2IK_JtCzwIKIB4u6o3hGNdbgg1uWH-gd8Oqu4BV_NmnFOxsUO9eCDChTMCdkBiK2wiW1h5xX6mKP_OhEMoQU4gNg8lJtkslQcEwG" />
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-md">
-                                <p class="text-white font-label-sm text-label-sm">Master Service Bay</p>
-                            </div>
-                        </div>
+                <button class="w-full py-4 border border-primary text-primary hover:bg-primary hover:text-background transition-all uppercase tracking-widest font-bold">Inquire Now</button>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Services Section -->
+<section class="bg-surface-container-low py-section-gap">
+    <div class="px-margin-desktop max-w-container-max mx-auto text-center">
+        <span class="font-label-sm text-label-sm text-tertiary uppercase tracking-widest">Aurum Excellence</span>
+        <h2 class="font-headline-xl text-headline-xl mt-4 mb-16 uppercase">Concierge Services</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+            <div class="p-10 bg-surface-container-highest rounded-xl border border-outline-variant hover:-translate-y-2 transition-transform duration-300">
+                <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-8">
+                    <span class="material-symbols-outlined text-4xl text-primary" style="font-variation-settings: 'FILL' 1;">build</span>
+                </div>
+                <h3 class="font-headline-md text-headline-md text-[24px] uppercase mb-4">Premium Maintenance</h3>
+                <p class="font-body-md text-body-md text-on-surface-variant">Our factory-certified master technicians utilize state-of-the-art diagnostic equipment to ensure your vehicle performs at its absolute peak.</p>
+            </div>
+            <div class="p-10 bg-surface-container-highest rounded-xl border border-outline-variant hover:-translate-y-2 transition-transform duration-300">
+                <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-8">
+                    <span class="material-symbols-outlined text-4xl text-primary" style="font-variation-settings: 'FILL' 1;">payments</span>
+                </div>
+                <h3 class="font-headline-md text-headline-md text-[24px] uppercase mb-4">Custom Financing</h3>
+                <p class="font-body-md text-body-md text-on-surface-variant">Bespoke financial arrangements tailored to your portfolio, offering flexible leasing and competitive acquisition structures for high-value assets.</p>
+            </div>
+            <div class="p-10 bg-surface-container-highest rounded-xl border border-outline-variant hover:-translate-y-2 transition-transform duration-300">
+                <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-8">
+                    <span class="material-symbols-outlined text-4xl text-primary" style="font-variation-settings: 'FILL' 1;">auto_fix_high</span>
+                </div>
+                <h3 class="font-headline-md text-headline-md text-[24px] uppercase mb-4">Exclusive Detailing</h3>
+                <p class="font-body-md text-body-md text-on-surface-variant">Meticulous restoration and preservation using aerospace-grade ceramic coatings and bespoke paint protection films for a concours-level finish.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- About / Vision Section -->
+<section class="py-section-gap relative overflow-hidden">
+    <div class="px-margin-desktop max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+        <div class="relative">
+            <div class="aspect-[4/5] rounded-xl overflow-hidden">
+                <img class="w-full h-full object-cover" data-alt="An ultra-modern, luxury car showroom interior at night. The space is vast with polished black marble floors reflecting the warm, spotlights above. A few high-end sports cars are artfully positioned in the background, out of focus. The architectural lines are sharp and minimal, exuding an atmosphere of elite exclusivity and engineering perfection." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAl2RgyEJ5YknWRM_fJNmSH6O_KscLTbmq_pPDdjS6Ke4dS0XQ38NmZAXBKKpzctDNTQkNnXZEGbhlLooPJvKx0OnwBaJzdqPvwV85M8UbNMj3CD-ma9TNo6n_yoO804WgW19iEi6WbVsrpcbzoISFr59bccJbcAaMwc45WDTH96CcxzFVlua1bEsGXKM8PuhNNu5DYOUb2YgCV7uYj4-wTv_S9frfqBDa9xgz2MpsALOyDcJUQScKOzWeuWqBHJFJ4hSY9hixHyyk" />
+            </div>
+            <div class="absolute -bottom-10 -right-10 bg-primary-container p-10 border border-outline-variant rounded-xl hidden md:block">
+                <span class="font-display-lg text-[64px] text-primary block leading-none">25+</span>
+                <span class="font-label-sm text-label-sm text-on-surface uppercase tracking-[0.2em]">Years of Excellence</span>
+            </div>
+        </div>
+        <div>
+            <span class="font-label-sm text-label-sm text-tertiary uppercase">The Vision</span>
+            <h2 class="font-headline-xl text-headline-xl mt-4 mb-8 uppercase">Redefining the<br />Luxury Experience</h2>
+            <div class="space-y-6">
+                <p class="font-body-lg text-body-lg text-on-surface">AURUM MOTORS was founded on the principle that a car is more than a machine; it is a manifestation of passion, engineering precision, and artistic expression.</p>
+                <p class="font-body-md text-body-md text-on-surface-variant">Our showroom is a sanctuary for the discerning collector. We curate only the most exceptional vehicles, ensuring that every acquisition at Aurum is a seamless transition into a world of unmatched prestige and performance.</p>
+            </div>
+            <div class="mt-12 grid grid-cols-2 gap-8">
+                <div>
+                    <h4 class="font-headline-md text-[20px] uppercase mb-2">Global Network</h4>
+                    <p class="font-body-md text-body-md text-on-surface-variant">Access to the world's most exclusive private collections.</p>
+                </div>
+                <div>
+                    <h4 class="font-headline-md text-[20px] uppercase mb-2">White Glove Delivery</h4>
+                    <p class="font-body-md text-body-md text-on-surface-variant">Enclosed transport to any location worldwide.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Location / Contact Section -->
+<section class="py-section-gap px-margin-desktop max-w-container-max mx-auto">
+    <div class="bg-surface-container rounded-2xl overflow-hidden flex flex-col md:flex-row border border-outline-variant">
+        <div class="w-full md:w-1/2 p-12 md:p-20">
+            <h2 class="font-headline-xl text-headline-xl mb-12 uppercase">Visit Our<br />Showroom</h2>
+            <div class="space-y-10">
+                <div class="flex items-start gap-6">
+                    <span class="material-symbols-outlined text-primary">location_on</span>
+                    <div>
+                        <p class="font-label-sm text-label-sm text-on-surface-variant uppercase mb-2">Location</p>
+                        <p class="font-body-lg text-body-lg">8800 Motorsport Drive<br />Los Angeles, CA 90210</p>
                     </div>
                 </div>
-            </section>
-            <!-- Call to Action -->
-            <section class="py-xl bg-inverse-surface text-center">
-                <div class="max-w-2xl mx-auto px-gutter">
-                    <h2 class="font-display-lg text-display-lg text-on-primary mb-md">Ready for the Next Chapter?</h2>
-                    <div class="flex flex-col md:flex-row gap-md justify-center">
-                        <button class="px-xl py-md bg-primary text-white font-label-sm text-label-sm rounded-lg hover:bg-on-primary-fixed-variant transition-all active:scale-95">
-                            Schedule Consultation
-                        </button>
-                        <button class="px-xl py-md border border-outline text-white font-label-sm text-label-sm rounded-lg hover:bg-white/10 transition-all active:scale-95">
-                            Explore Inventory
-                        </button>
+                <div class="flex items-start gap-6">
+                    <span class="material-symbols-outlined text-primary">schedule</span>
+                    <div>
+                        <p class="font-label-sm text-label-sm text-on-surface-variant uppercase mb-2">Operating Hours</p>
+                        <p class="font-body-lg text-body-lg">Mon - Sat: 09:00 AM - 08:00 PM<br />Sunday: By Private Appointment</p>
                     </div>
                 </div>
-            </section>
-        </main>
-        <script>
-            // Micro-interactions and scroll effects
-            document.addEventListener('DOMContentLoaded', () => {
-                const observerOptions = {
-                    threshold: 0.1
-                };
-
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add('opacity-100', 'translate-y-0');
-                            entry.target.classList.remove('opacity-0', 'translate-y-10');
-                        }
-                    });
-                }, observerOptions);
-
-                // Animate on scroll for sections
-                document.querySelectorAll('section').forEach(section => {
-                    section.classList.add('transition-all', 'duration-1000', 'ease-out');
-                });
-            });
-
-            // Sticky header color change on scroll
-            window.addEventListener('scroll', () => {
-                const header = document.querySelector('header');
-                if (window.scrollY > 50) {
-                    header.classList.add('shadow-sm', 'bg-white/95', 'backdrop-blur-md');
-                } else {
-                    header.classList.remove('shadow-sm', 'bg-white/95', 'backdrop-blur-md');
-                }
-            });
-        </script>
-    </body>
-
-    </html>
-</div>
+                <div class="flex items-start gap-6">
+                    <span class="material-symbols-outlined text-primary">call</span>
+                    <div>
+                        <p class="font-label-sm text-label-sm text-on-surface-variant uppercase mb-2">Direct Line</p>
+                        <p class="font-headline-md text-headline-md text-[24px]">+1 (555) AURUM-00</p>
+                    </div>
+                </div>
+            </div>
+            <button class="mt-12 w-full py-4 bg-on-surface text-background font-bold rounded-lg uppercase tracking-widest hover:bg-primary transition-colors">Get Directions</button>
+        </div>
+        <div class="w-full md:w-1/2 h-[400px] md:h-auto bg-surface-container-highest relative grayscale contrast-125">
+            <!-- Map Placeholder -->
+            <div class="absolute inset-0 flex items-center justify-center">
+                <div class="text-center">
+                    <span class="material-symbols-outlined text-6xl text-primary mb-4">map</span>
+                    <p class="font-label-sm text-label-sm uppercase">Interactive Showroom Map</p>
+                </div>
+            </div>
+            <img class="w-full h-full object-cover opacity-30" data-alt="A dark-themed, stylized satellite map view of Beverly Hills and surrounding Los Angeles areas. The map uses a charcoal and deep grey color palette with primary red accents highlighting key thoroughfares. It has a high-tech, digital aesthetic consistent with luxury automotive navigation systems." data-location="Los Angeles" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5quQUFbW0AJ4HSBl5T_1qHfLHM6z6vePgEwBbWHek1iu9gtOg4na5Y9y3N6fiFSmjbQBKtueSJZ6D51Fup03RxBUF0IOqxky5EZ3Y43EwFdGp6h2v0U55BkEyuZKdCx0z_aNzGhRFeMrn7O9g4qr-Qmxtpv7SahHWVraX9esdQD9Ra-ykT-SYjSfczNcHOmj_SydPmtYQGW-FHORL24xswVnI4c60ihNT8jdg0JsQ5Wb79wK9vihZD_ZaAqka4CCI6RNyhrl9eUQ" />
+        </div>
+    </div>
+</section>
 @endsection
