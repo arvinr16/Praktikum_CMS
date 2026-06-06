@@ -244,19 +244,19 @@
       </div>
       <div class="hidden md:flex items-center gap-8">
         <a
-          class="font-body-md text-body-md text-primary dark:text-primary border-b-2 border-metallic-start pb-1 font-bold"
-          href="#">Home</a>
+          class="{{ request()->routeIs('index') ? 'font-body-md text-body-md text-primary dark:text-primary border-b-2 border-metallic-start pb-1 font-bold' : '' }}"
+          href="{{ '/' }}">Home</a>
         <a
-          class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors duration-300"
-          href="#">About</a>
+          class="{{ request()->routeIs('page') ? 'font-body-md text-body-md text-primary dark:text-primary border-b-2 border-metallic-start pb-1 font-bold' : '' }}"
+          href="{{ 'page' }}">About</a>
         <a
-          class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors duration-300"
+          class="{{ request()->routeIs('cars') ? 'font-body-md text-body-md text-primary dark:text-primary border-b-2 border-metallic-start pb-1 font-bold' : '' }}"
           href="#">Cars</a>
         <a
-          class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors duration-300"
+          class="{{ request()->routeIs('articles') ? 'font-body-md text-body-md text-primary dark:text-primary border-b-2 border-metallic-start pb-1 font-bold' : '' }}"
           href="#">Articles</a>
         <a
-          class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors duration-300"
+          class="{{ request()->routeIs('contact') ? 'font-body-md text-body-md text-primary dark:text-primary border-b-2 border-metallic-start pb-1 font-bold' : '' }}"
           href="#">Contact</a>
       </div>
       <div class="flex items-center">
