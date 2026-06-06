@@ -1,267 +1,388 @@
-<!DOCTYPE html>
+<!doctype html>
 
 <html class="dark" lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&amp;family=Hanken+Grotesk:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
-    <script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    "colors": {
-                        "on-primary-fixed-variant": "#474647",
-                        "on-secondary-container": "#acb6c2",
-                        "inverse-on-surface": "#303033",
-                        "on-secondary": "#28313b",
-                        "on-error-container": "#ffdad6",
-                        "surface-container-lowest": "#0e0e11",
-                        "inverse-surface": "#e4e1e6",
-                        "surface-container-high": "#2a2a2d",
-                        "on-tertiary-fixed-variant": "#92001c",
-                        "secondary": "#bdc8d3",
-                        "error": "#ffb4ab",
-                        "error-container": "#93000a",
-                        "on-primary": "#313031",
-                        "surface-variant": "#353438",
-                        "secondary-container": "#3e4852",
-                        "on-tertiary-fixed": "#410007",
-                        "tertiary": "#ffb3b1",
-                        "on-error": "#690005",
-                        "on-surface-variant": "#c7c6ca",
-                        "primary-fixed": "#e5e2e3",
-                        "surface-container": "#1f1f22",
-                        "tertiary-fixed-dim": "#ffb3b1",
-                        "primary-container": "#0a0a0b",
-                        "primary": "#c8c6c7",
-                        "outline-variant": "#46464a",
-                        "outline": "#919094",
-                        "surface-container-low": "#1b1b1e",
-                        "on-primary-fixed": "#1c1b1c",
-                        "on-tertiary": "#680011",
-                        "primary-fixed-dim": "#c8c6c7",
-                        "surface-container-highest": "#353438",
-                        "on-secondary-fixed": "#131d25",
-                        "surface-tint": "#c8c6c7",
-                        "inverse-primary": "#5f5e5f",
-                        "tertiary-container": "#200002",
-                        "secondary-fixed": "#dae3f0",
-                        "on-primary-container": "#7a797a",
-                        "on-tertiary-container": "#e23644",
-                        "secondary-fixed-dim": "#bdc8d3",
-                        "tertiary-fixed": "#ffdad8",
-                        "on-surface": "#e4e1e6",
-                        "background": "#131316",
-                        "on-secondary-fixed-variant": "#3e4852",
-                        "surface": "#131316",
-                        "on-background": "#e4e1e6",
-                        "surface-bright": "#39393c",
-                        "surface-dim": "#131316"
-                    },
-                    "borderRadius": {
-                        "DEFAULT": "0.125rem",
-                        "lg": "0.25rem",
-                        "xl": "0.5rem",
-                        "full": "0.75rem"
-                    },
-                    "spacing": {
-                        "margin-desktop": "80px",
-                        "gutter": "32px",
-                        "container-max": "1440px",
-                        "margin-mobile": "20px",
-                        "section-gap": "120px"
-                    },
-                    "fontFamily": {
-                        "headline-xl": ["Sora"],
-                        "headline-md": ["Sora"],
-                        "body-lg": ["Hanken Grotesk"],
-                        "headline-xl-mobile": ["Sora"],
-                        "body-md": ["Hanken Grotesk"],
-                        "label-sm": ["JetBrains Mono"],
-                        "display-lg": ["Sora"]
-                    },
-                    "fontSize": {
-                        "headline-xl": ["48px", {
-                            "lineHeight": "1.2",
-                            "letterSpacing": "-0.01em",
-                            "fontWeight": "700"
-                        }],
-                        "headline-md": ["32px", {
-                            "lineHeight": "1.3",
-                            "fontWeight": "600"
-                        }],
-                        "body-lg": ["18px", {
-                            "lineHeight": "1.6",
-                            "fontWeight": "400"
-                        }],
-                        "headline-xl-mobile": ["32px", {
-                            "lineHeight": "1.2",
-                            "fontWeight": "700"
-                        }],
-                        "body-md": ["16px", {
-                            "lineHeight": "1.6",
-                            "fontWeight": "400"
-                        }],
-                        "label-sm": ["12px", {
-                            "lineHeight": "1.0",
-                            "letterSpacing": "0.1em",
-                            "fontWeight": "500"
-                        }],
-                        "display-lg": ["72px", {
-                            "lineHeight": "1.1",
-                            "letterSpacing": "-0.02em",
-                            "fontWeight": "800"
-                        }]
-                    }
-                },
-            },
-        }
-    </script>
-    <style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
-        }
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Elegance MOTORS INDONESIA | Engineering Excellence</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&amp;family=Hanken+Grotesk:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <style>
+    :root {
+      --metallic-gradient: linear-gradient(135deg, #e23644 0%, #92001c 100%);
+      --mouse-x: 50%;
+      --mouse-y: 50%;
+    }
 
-        .glass-effect {
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-        }
+    body {
+      background-color: #131316;
+      color: #e4e1e6;
+      overflow-x: hidden;
+    }
 
-        .btn-metallic {
-            background: linear-gradient(180deg, #e23644 0%, #92001c 100%);
-            box-shadow: 0 4px 15px rgba(226, 54, 68, 0.3);
-        }
+    /* 1. Animated Grid Background */
+    .bg-grid-animate {
+      background-size: 50px 50px;
+      background-image:
+        linear-gradient(to right,
+          rgba(255, 255, 255, 0.05) 1px,
+          transparent 1px),
+        linear-gradient(to bottom,
+          rgba(255, 255, 255, 0.05) 1px,
+          transparent 1px);
+      mask-image: radial-gradient(circle at center, black, transparent 80%);
+      animation: grid-move 20s linear infinite;
+    }
 
-        .text-glow {
-            text-shadow: 0 0 20px rgba(200, 198, 199, 0.2);
-        }
-    </style>
+    @keyframes grid-move {
+      0% {
+        background-position: 0 0;
+      }
+
+      100% {
+        background-position: 500px 500px;
+      }
+    }
+
+    /* 2. Global Mouse Glow Effect */
+    .mouse-glow {
+      position: fixed;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      background: radial-gradient(600px circle at var(--mouse-x) var(--mouse-y),
+          rgba(226, 54, 68, 0.1),
+          transparent 40%);
+    }
+
+    /* 3. Refined Tilt Card with Internal Glow */
+    .tilt-card {
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.15s ease-out;
+      overflow: hidden;
+    }
+
+    .tilt-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      pointer-events: none;
+      background: radial-gradient(400px circle at var(--card-mouse-x, 50%) var(--card-mouse-y, 50%),
+          rgba(255, 255, 255, 0.1),
+          transparent 40%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .tilt-card:hover::before {
+      opacity: 1;
+    }
+
+    .glass-panel {
+      backdrop-filter: blur(20px);
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .metallic-cta {
+      background: var(--metallic-gradient);
+      box-shadow: 0 4px 15px rgba(226, 54, 68, 0.3);
+      transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .metallic-cta:hover {
+      box-shadow: 0 8px 25px rgba(226, 54, 68, 0.5);
+      transform: translateY(-2px);
+    }
+  </style>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface-dim": "#131316",
+            background: "#131316",
+            "on-secondary": "#27323a",
+            "surface-tint": "#c8c6c7",
+            "glow-silver": "rgba(200, 198, 199, 0.2)",
+            "outline-variant": "#46464a",
+            "surface-container-low": "#1b1b1e",
+            "on-primary": "#303031",
+            "on-primary-container": "#535253",
+            "on-tertiary-fixed-variant": "#6d3737",
+            "on-error-container": "#ffdad6",
+            "secondary-fixed-dim": "#bdc8d3",
+            "surface-container-highest": "#353438",
+            "surface-container-lowest": "#0e0e11",
+            primary: "#e4e2e3",
+            "on-tertiary": "#512122",
+            "surface-container-high": "#2a2a2d",
+            "tertiary-fixed-dim": "#ffb3b1",
+            "surface-variant": "#353438",
+            "inverse-on-surface": "#303033",
+            "on-background": "#e4e1e6",
+            "tertiary-container": "#ffb3b1",
+            "on-surface": "#e4e1e6",
+            surface: "#131316",
+            tertiary: "#ffdad8",
+            "primary-fixed-dim": "#c8c6c7",
+            "secondary-container": "#3d4851",
+            error: "#ffb4ab",
+            "tertiary-fixed": "#ffdad8",
+            "on-secondary-container": "#abb6c1",
+            "surface-container": "#1f1f22",
+            "metallic-start": "#e23644",
+            "on-error": "#690005",
+            "on-secondary-fixed": "#121d25",
+            "on-tertiary-fixed": "#370d0e",
+            outline: "#909194",
+            "inverse-primary": "#5f5e5f",
+            "on-tertiary-container": "#7b4242",
+            "on-primary-fixed": "#1b1b1c",
+            "on-primary-fixed-variant": "#474748",
+            "on-surface-variant": "#c6c6ca",
+            "metallic-end": "#92001c",
+            "surface-bright": "#39393c",
+            "primary-container": "#c8c6c7",
+            "primary-fixed": "#e4e2e3",
+            "secondary-fixed": "#d9e4ef",
+            "inverse-surface": "#e4e1e6",
+            "error-container": "#93000a",
+            secondary: "#bdc8d3",
+            "on-secondary-fixed-variant": "#3d4851",
+          },
+          borderRadius: {
+            DEFAULT: "0.125rem",
+            lg: "0.25rem",
+            xl: "0.5rem",
+            full: "0.75rem",
+          },
+          spacing: {
+            "container-max": "1440px",
+            "unit-base": "8px",
+            gutter: "32px",
+            "section-gap": "120px",
+            "margin-desktop": "80px",
+            "margin-mobile": "20px",
+          },
+          fontFamily: {
+            "headline-xl-mobile": ["Sora"],
+            "body-md": ["Hanken Grotesk"],
+            "headline-xl": ["Sora"],
+            "headline-md": ["Sora"],
+            "display-lg": ["Sora"],
+            "label-sm": ["JetBrains Mono"],
+            "body-lg": ["Hanken Grotesk"],
+          },
+          fontSize: {
+            "headline-xl-mobile": [
+              "32px",
+              {
+                lineHeight: "1.2",
+                fontWeight: "700"
+              },
+            ],
+            "body-md": ["16px", {
+              lineHeight: "1.6",
+              fontWeight: "400"
+            }],
+            "headline-xl": ["48px", {
+              lineHeight: "1.2",
+              fontWeight: "700"
+            }],
+            "headline-md": ["32px", {
+              lineHeight: "1.3",
+              fontWeight: "600"
+            }],
+            "display-lg": [
+              "72px",
+              {
+                lineHeight: "1.1",
+                letterSpacing: "-0.02em",
+                fontWeight: "800",
+              },
+            ],
+            "label-sm": [
+              "12px",
+              {
+                lineHeight: "1.0",
+                letterSpacing: "0.05em",
+                fontWeight: "500",
+              },
+            ],
+            "body-lg": ["18px", {
+              lineHeight: "1.6",
+              fontWeight: "400"
+            }],
+          },
+        },
+      },
+    };
+  </script>
 </head>
 
-<body class="bg-background text-on-background selection:bg-tertiary/30">
-    <!-- Top Navigation Bar -->
-    <nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl dark:bg-surface/80 shadow-sm border-b border-white/10">
-        <div class="flex justify-between items-center h-20 px-margin-desktop max-w-container-max mx-auto">
-            <div class="font-headline-md text-headline-md tracking-tighter text-on-surface dark:text-on-surface uppercase">
-                AURUM MOTORS
-            </div>
-            <div class="hidden md:flex gap-8 items-center">
-                <a class="font-body-md text-body-md text-primary border-b-2 border-primary pb-1" href="{{ route('index') }}">Home</a>
-                <a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Services</a>
-                <a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="{{ route('page') }}">About Us</a>
-                <a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Contact</a>
-            </div>
-            <button class="active:scale-95 transition-transform bg-primary-container border border-outline px-6 py-2 rounded-lg font-body-md text-body-md text-on-surface hover:bg-surface-container-high">
-                Book Test Drive
-            </button>
+<body class="bg-surface-dim selection:bg-metallic-start selection:text-white">
+  <div class="mouse-glow" id="mouse-glow"></div>
+  <div class="fixed inset-0 bg-grid-animate pointer-events-none z-0"></div>
+  <!-- Navigation Shell -->
+  <nav
+    class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-xl border-b border-outline-variant/20 shadow-sm">
+    <div
+      class="flex justify-between items-center px-margin-desktop h-20 max-w-container-max mx-auto">
+      <div
+        class="font-headline-md text-headline-md font-bold tracking-tighter text-primary dark:text-primary">
+        Elegance MOTORS INDONESIA
+      </div>
+      <div class="hidden md:flex items-center gap-8">
+        <a
+          class="font-body-md text-body-md text-primary dark:text-primary border-b-2 border-metallic-start pb-1 font-bold"
+          href="#">Home</a>
+        <a
+          class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors duration-300"
+          href="#">About</a>
+        <a
+          class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors duration-300"
+          href="#">Cars</a>
+        <a
+          class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors duration-300"
+          href="#">Articles</a>
+        <a
+          class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors duration-300"
+          href="#">Contact</a>
+      </div>
+      <div class="flex items-center">
+        <button
+          class="metallic-cta px-8 py-2 font-label-sm text-label-sm uppercase tracking-widest text-on-surface font-bold">
+          Inquiry
+        </button>
+      </div>
+    </div>
+  </nav>
+  @yield('content')
+  <footer
+    class="w-full py-section-gap bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-outline-variant/20">
+    <div
+      class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop max-w-container-max mx-auto">
+      <div class="col-span-1 md:col-span-1">
+        <div
+          class="font-headline-md text-headline-md font-bold text-primary mb-6">
+          Elegance MOTORS
         </div>
-    </nav>
-    <!-- Hero Section -->
-    <header class="relative h-screen flex items-center justify-center overflow-hidden">
-        <div class="absolute inset-0 z-0">
-            <img class="w-full h-full object-cover" data-alt="A side-profile shot of a sleek, silver Porsche 911 GT3 RS parked in a dimly lit, minimalist architectural space with sharp concrete lines. The car's metallic surfaces catch subtle overhead rim lighting, emphasizing its aerodynamic curves. The atmosphere is cold, luxurious, and powerful, with a deep obsidian background that makes the silver paint pop. High-end automotive photography style with cinematic depth of field." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0-WoapBJozsA7wN3jMi9Gmd5RcjpU6g16OIDAiFgGzkpUMrYf0nrW3A0__a2VRgjhgQNEFJDl-OEcOgNaiWbtr2YtMaTxFeuxvSMB9kNHCGgjxXDaMRjOGImdnyesJ6fCfYBDwBbBMg_dKrJ4xCBMQRvx_6n6zZw6eFnHKUQZBQgvTBa9Ng7O6TA82Xj9kksFHh7zxVlXtF6c_geiZjUMK-qtB4-aVZpMJ_uTgFnCT8BekhjnBSqzd428cJkskRAnAUDsVaN7hiw" />
-            <div class="absolute inset-0 bg-gradient-to-r from-background via-transparent to-transparent opacity-80"></div>
-            <div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+        <p class="font-body-md text-body-md text-on-surface-variant">
+          The leading destination for premium automotive excellence in
+          Indonesia. Craftsmanship, technology, and trust.
+        </p>
+      </div>
+      <div class="flex flex-col gap-4">
+        <h4
+          class="font-label-sm text-label-sm font-bold text-primary uppercase mb-2">
+          Showrooms
+        </h4>
+        <a
+          class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors"
+          href="#">Jakarta Showroom: Jl. Sudirman No. 12</a>
+        <a
+          class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors"
+          href="#">Surabaya Showroom: Jl. Basuki Rahmat No. 45</a>
+      </div>
+      <div class="flex flex-col gap-4">
+        <h4
+          class="font-label-sm text-label-sm font-bold text-primary uppercase mb-2">
+          Concierge
+        </h4>
+        <a
+          class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors"
+          href="#">Contact: +62 21 555 0123</a>
+        <a
+          class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors"
+          href="#">Email: concierge@Elegance-motors.id</a>
+      </div>
+      <div class="flex flex-col gap-4">
+        <h4
+          class="font-label-sm text-label-sm font-bold text-primary uppercase mb-2">
+          Legal
+        </h4>
+        <a
+          class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors"
+          href="#">Terms of Service</a>
+        <a
+          class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors"
+          href="#">Privacy Policy</a>
+        <div
+          class="mt-4 font-body-md text-body-md text-on-surface-variant opacity-60">
+          © 2024 Elegance MOTORS INDONESIA. ALL RIGHTS RESERVED.
         </div>
-        <div class="relative z-10 w-full px-margin-desktop max-w-container-max mx-auto">
-            <div class="max-w-4xl">
-                <p class="font-label-sm text-label-sm text-tertiary mb-4 tracking-[0.3em] uppercase">The Pinnacle of Automotive Artistry</p>
-                <h1 class="font-display-lg text-display-lg mb-8 text-glow uppercase leading-tight">
-                    Engineering Excellence.<br />
-                    <span class="text-primary-fixed-dim">Unmatched Performance.</span>
-                </h1>
-                <div class="flex gap-6">
-                    <button class="btn-metallic px-10 py-4 rounded-lg font-body-lg text-white font-bold transition-all hover:brightness-110 active:scale-95 uppercase tracking-wider">
-                        Explore Inventory
-                    </button>
-                    <button class="px-10 py-4 rounded-lg font-body-lg text-on-surface border border-outline hover:bg-surface-container transition-colors uppercase tracking-wider">
-                        The Vision
-                    </button>
-                </div>
-            </div>
-        </div>
-        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce opacity-50">
-            <span class="font-label-sm text-label-sm">SCROLL</span>
-            <span class="material-symbols-outlined">expand_more</span>
-        </div>
-    </header>
-    @yield('content')
-    <footer class="w-full pt-section-gap pb-12 bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-outline-variant">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop max-w-container-max mx-auto">
-            <div class="col-span-1 md:col-span-1">
-                <div class="font-headline-md text-headline-md text-primary uppercase mb-6">AURUM MOTORS</div>
-                <p class="font-body-md text-body-md text-on-surface-variant mb-8">Elevating the standards of high-performance automotive excellence since 1999.</p>
-                <div class="flex gap-4">
-                    <a class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center hover:bg-primary hover:text-background transition-all" href="#">
-                        <span class="material-symbols-outlined text-sm">public</span>
-                    </a>
-                    <a class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center hover:bg-primary hover:text-background transition-all" href="#">
-                        <span class="material-symbols-outlined text-sm">share</span>
-                    </a>
-                </div>
-            </div>
-            <div>
-                <h4 class="font-label-sm text-label-sm text-on-surface uppercase tracking-widest mb-6">Quick Links</h4>
-                <ul class="space-y-4">
-                    <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Inventory</a></li>
-                    <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Sell Your Car</a></li>
-                    <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Locations</a></li>
-                    <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Careers</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="font-label-sm text-label-sm text-on-surface uppercase tracking-widest mb-6">Support</h4>
-                <ul class="space-y-4">
-                    <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
-                    <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a></li>
-                    <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Financial Services</a></li>
-                    <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Contact Support</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="font-label-sm text-label-sm text-on-surface uppercase tracking-widest mb-6">Newsletter</h4>
-                <p class="font-body-md text-body-md text-on-surface-variant mb-4">Stay updated with our latest collections.</p>
-                <div class="flex border-b border-outline-variant pb-2">
-                    <input class="bg-transparent border-none focus:ring-0 font-label-sm text-label-sm w-full placeholder:text-outline" placeholder="ENTER EMAIL" type="email" />
-                    <button class="material-symbols-outlined text-primary">arrow_forward</button>
-                </div>
-            </div>
-        </div>
-        <div class="mt-20 pt-8 border-t border-outline-variant/30 px-margin-desktop max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-            <span class="font-label-sm text-label-sm text-on-surface-variant">© 2024 AURUM MOTORS. ENGINEERING EXCELLENCE REDEFINED.</span>
-            <div class="flex gap-8">
-                <span class="font-label-sm text-label-sm text-on-surface-variant">PRIVACY</span>
-                <span class="font-label-sm text-label-sm text-on-surface-variant">COOKIES</span>
-                <span class="font-label-sm text-label-sm text-on-surface-variant">ACCESSIBILITY</span>
-            </div>
-        </div>
-    </footer>
-    <script>
-        // Micro-interactions for scrolling
-        window.addEventListener('scroll', () => {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 50) {
-                nav.classList.add('py-2');
-                nav.classList.remove('py-4');
-            } else {
-                nav.classList.add('py-4');
-                nav.classList.remove('py-2');
-            }
-        });
+      </div>
+    </div>
+  </footer>
+  <script>
+    // 4. Mouse Position Tracking
+    document.addEventListener("mousemove", (e) => {
+      // Global mouse position
+      document.documentElement.style.setProperty(
+        "--mouse-x",
+        `${e.clientX}px`,
+      );
+      document.documentElement.style.setProperty(
+        "--mouse-y",
+        `${e.clientY}px`,
+      );
 
-        // Simple hover effect for cards
-        const cards = document.querySelectorAll('.group');
-        cards.forEach(card => {
-            card.addEventListener('mouseenter', () => {
-                // Subtle lift or border change handled by Tailwind classes
-            });
-        });
-    </script>
+      // Per-card mouse position for internal glow
+      const cards = document.querySelectorAll(".tilt-card");
+      cards.forEach((card) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        card.style.setProperty("--card-mouse-x", `${x}px`);
+        card.style.setProperty("--card-mouse-y", `${y}px`);
+
+        // 3D Tilt Effect
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        const rotateX = (y - centerY) / 50;
+        const rotateY = (centerX - x) / 50;
+
+        if (x > 0 && x < rect.width && y > 0 && y < rect.height) {
+          card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.01, 1.01, 1.01)`;
+        } else {
+          card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+        }
+      });
+    });
+
+    // Ensure tilt resets on leave (extra safety)
+    const cards = document.querySelectorAll(".tilt-card");
+    cards.forEach((card) => {
+      card.addEventListener("mouseleave", () => {
+        card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+      });
+    });
+
+    // Navigation Highlight on Scroll
+    window.addEventListener("scroll", () => {
+      const nav = document.querySelector("nav");
+      if (window.scrollY > 50) {
+        nav.classList.add("shadow-xl");
+        nav.classList.remove("bg-surface/80");
+        nav.classList.add("bg-surface-dim/95");
+      } else {
+        nav.classList.remove("shadow-xl");
+        nav.classList.add("bg-surface/80");
+        nav.classList.remove("bg-surface-dim/95");
+      }
+    });
+  </script>
 </body>
 
 </html>
