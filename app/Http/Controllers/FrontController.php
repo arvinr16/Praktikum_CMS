@@ -16,6 +16,11 @@ class FrontController extends Controller
         return view('page');
     }
 
+    public function cars()
+    {
+        return view('cars');
+    }
+
     public function test()
     {
         return view('test');

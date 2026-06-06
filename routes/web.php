@@ -24,6 +24,7 @@ Kita bisa membuat untuk admin kira2 seperti ini:
 
 Route::get('/', [FrontController::class, 'index'])->name('index');
 Route::get('/page', [FrontController::class, 'page'])->name('page');
+Route::get('/cars', [FrontController::class, 'cars'])->name('cars');
 Route::get('/test', [FrontController::class, 'test'])->name('test');
 // Route::get('/', function () {
 //     return view('welcome');
