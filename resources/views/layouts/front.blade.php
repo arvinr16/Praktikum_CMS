@@ -235,7 +235,7 @@
   <div class="fixed inset-0 bg-grid-animate pointer-events-none z-0"></div>
   <!-- Navigation Shell -->
   <nav
-    class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-xl border-b border-outline-variant/20 shadow-sm">
+    class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-md border-b border-outline-variant/20 shadow-sm" style="border-radius: 0px 0px 50px 50px;">
     <div
       class="flex justify-between items-center px-margin-desktop h-20 max-w-container-max mx-auto">
       <div
@@ -251,7 +251,7 @@
           href="{{ 'page' }}">About</a>
         <a
           class="{{ request()->routeIs('cars') ? 'font-body-md text-body-md text-primary dark:text-primary border-b-2 border-metallic-start pb-1 font-bold' : '' }}"
-          href="#">Cars</a>
+          href="{{ 'cars' }}">Cars</a>
         <a
           class="{{ request()->routeIs('articles') ? 'font-body-md text-body-md text-primary dark:text-primary border-b-2 border-metallic-start pb-1 font-bold' : '' }}"
           href="#">Articles</a>
@@ -269,7 +269,7 @@
   </nav>
   @yield('content')
   <footer
-    class="w-full py-section-gap bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-outline-variant/20">
+    class="w-full py-section-gap bg-black/100 border-radius" style="border-radius: 100px 0px 0px 0px">
     <div
       class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop max-w-container-max mx-auto">
       <div class="col-span-1 md:col-span-1">
