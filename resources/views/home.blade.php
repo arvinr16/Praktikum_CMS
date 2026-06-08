@@ -10,11 +10,11 @@
                 <span
                     class="w-2 h-2 rounded-full bg-metallic-start animate-pulse"></span>
                 <span
-                    class="font-label-sm text-label-sm text-on-surface-variant uppercase">Elite Selection 2024</span>
+                    class="font-label-sm text-label-sm text-on-surface-variant uppercase">the choice of the elite 2026</span>
             </div>
             <h1
                 class="font-display-lg text-display-lg mb-4 text-primary leading-tight">
-                Engineering<br /><span
+                Passion<br /><span
                     class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-outline">Excellence.</span>
             </h1>
             <p
@@ -24,14 +24,16 @@
                 collector.
             </p>
             <div class="flex gap-4">
-                <button
+                <a
+                    href="{{ 'cars' }}"
                     class="metallic-cta px-10 py-4 font-label-sm text-label-sm uppercase tracking-widest text-on-surface font-bold">
                     Explore Collection
-                </button>
-                <button
+                </a>
+                <a
+                    href="{{ 'cars' }}"
                     class="px-10 py-4 border border-outline-variant hover:bg-white/5 transition-all font-label-sm text-label-sm uppercase tracking-widest text-primary font-bold">
                     Virtual Showroom
-                </button>
+                </a>
             </div>
         </div>
         <div class="relative group">
@@ -39,7 +41,7 @@
                 class="absolute -inset-4 bg-metallic-start/10 blur-3xl rounded-full opacity-50 group-hover:opacity-70 transition-opacity"></div>
             <img
                 alt="Luxury MPV"
-                class="relative z-10 w-full drop-shadow-2xl tilt-card transform transition-transform duration-500 hover:scale-105"
+                class="relative z-10 w-xs drop-shadow-2xl tilt-card transform transition-transform duration-500 hover:scale-105"
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHrDbVBGZBZpapxQp6nSVGL9L2VvtGlONyDBW3FYzXYNIMSnfVB6KAHhKr6_nzFVrl8wJzRqeNDT29iw5DQzmDgtQ56XW44u71sa4GSfBjvpfXJ22VQWUNqikJMLg0W1Hxi2gOXHsctg_1TS4mHUQOpLZHv6i_6hlDV9jFAGKzMkO-9VVgy_59a5aoTRJNses0ZqfrCR4BlwqpniLXYeumsPoDjL8BSwypv7Pqh1T_cD50X89or4C2enf6xrQ-tA68znUcNzcdAhui" />
         </div>
     </div>
