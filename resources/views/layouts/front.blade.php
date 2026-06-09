@@ -319,7 +319,7 @@
           href="#">Privacy Policy</a>
         <div
           class="mt-4 font-body-md text-body-md text-on-surface-variant opacity-60">
-          © 2024 Elegance MOTORS INDONESIA. ALL RIGHTS RESERVED.
+          © 2026 Elegance Motors Indonesia (ArviNR16). ALL RIGHTS RESERVED.
         </div>
       </div>
     </div>
@@ -350,8 +350,8 @@
         // 3D Tilt Effect
         const centerX = rect.width / 2;
         const centerY = rect.height / 2;
-        const rotateX = (y - centerY) / 50;
-        const rotateY = (centerX - x) / 50;
+        const rotateX = (y - centerY) / 80;
+        const rotateY = (centerX - x) / 80;
 
         if (x > 0 && x < rect.width && y > 0 && y < rect.height) {
           card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.01, 1.01, 1.01)`;
