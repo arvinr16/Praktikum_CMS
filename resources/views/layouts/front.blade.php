@@ -102,6 +102,53 @@
       box-shadow: 0 8px 25px rgba(226, 54, 68, 0.5);
       transform: translateY(-2px);
     }
+
+    #nav-container {
+      transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* Navbar Floating State - Removing the "background hitam" behind it */
+    #main-nav.nav-floating {
+      margin-top: 1rem;
+      width: calc(100% - 2rem);
+      max-width: 1280px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 9999px;
+      background: rgba(31, 31, 34, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+
+    /* Prevent scrollbar jump when mobile menu opens */
+    body.menu-open {
+      overflow: hidden;
+      padding-right: var(--scrollbar-width, 0px);
+    }
+
+    #mobile-menu-overlay {
+      transition:
+        opacity 0.4s ease,
+        visibility 0.4s ease;
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    #mobile-menu-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    #mobile-menu-content {
+      transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+      transform: translateY(-20px);
+    }
+
+    #mobile-menu-overlay.active #mobile-menu-content {
+      transform: translateY(0);
+    }
   </style>
   <script id="tailwind-config">
     tailwind.config = {
@@ -230,43 +277,87 @@
   </script>
 </head>
 
-<body class="bg-surface-dim selection:bg-metallic-start selection:text-white">
+<body class="relative min-h-[200vh] bg-surface-dim selection:bg-metallic-start selection:text-white">
   <div class="mouse-glow" id="mouse-glow"></div>
   <div class="fixed inset-0 bg-grid-animate pointer-events-none z-0"></div>
-  <!-- Navigation Shell -->
+  <!-- Navigation Bar -->
   <nav
-    class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-md border-b border-outline-variant/20 shadow-sm" style="border-radius: 0px 0px 50px 50px;">
+    class="fixed top-0 w-full z-[100] h-20 flex items-center border-b border-white/5"
+    id="main-nav">
     <div
-      class="flex justify-between items-center px-margin-desktop h-20 max-w-container-max mx-auto">
+      class="max-w-container-max mx-auto w-full px-margin-desktop flex justify-between items-center"
+      id="nav-inner">
       <div
-        class="font-headline-md text-headline-md font-bold tracking-tighter text-primary dark:text-primary">
-        Elegance MOTORS INDONESIA
+        class="font-headline text-xl font-bold tracking-tighter uppercase">
+        AURUM MOTORS
       </div>
-      <div class="hidden md:flex items-center gap-8">
+      <div class="hidden md:flex gap-8 items-center">
         <a
-          class="{{ request()->routeIs('index') ? 'font-body-md text-body-md text-primary dark:text-primary border-b-2 border-metallic-start pb-1 font-bold' : '' }}"
-          href="{{ '/' }}">Home</a>
+          class="text-sm font-medium hover:text-primary transition-colors"
+          href="#">Home</a>
         <a
-          class="{{ request()->routeIs('page') ? 'font-body-md text-body-md text-primary dark:text-primary border-b-2 border-metallic-start pb-1 font-bold' : '' }}"
-          href="{{ 'page' }}">About</a>
+          class="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors"
+          href="#">About</a>
         <a
-          class="{{ request()->routeIs('cars') ? 'font-body-md text-body-md text-primary dark:text-primary border-b-2 border-metallic-start pb-1 font-bold' : '' }}"
-          href="{{ 'cars' }}">Cars</a>
+          class="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors"
+          href="#">Inventory</a>
         <a
-          class="{{ request()->routeIs('articles') ? 'font-body-md text-body-md text-primary dark:text-primary border-b-2 border-metallic-start pb-1 font-bold' : '' }}"
+          class="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors"
           href="#">Articles</a>
         <a
-          class="{{ request()->routeIs('contact') ? 'font-body-md text-body-md text-primary dark:text-primary border-b-2 border-metallic-start pb-1 font-bold' : '' }}"
+          class="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors"
           href="#">Contact</a>
       </div>
-      <div class="flex items-center">
+      <div class="flex items-center gap-4">
         <button
-          class="metallic-cta px-8 py-2 font-label-sm text-label-sm uppercase tracking-widest text-on-surface font-bold">
+          class="hidden md:block bg-white text-surface px-6 py-2 rounded-full text-xs font-bold uppercase tracking-wider hover:bg-primary transition-all">
           Inquiry
+        </button>
+        <button
+          class="md:hidden flex flex-col gap-1.5 p-2"
+          id="hamburger-btn">
+          <span class="w-6 h-0.5 bg-on-surface"></span>
+          <span class="w-6 h-0.5 bg-on-surface"></span>
+          <span class="w-4 h-0.5 bg-on-surface self-end"></span>
         </button>
       </div>
     </div>
   </nav>
+  <!-- Mobile Menu Overlay -->
+  <div
+    class="fixed inset-0 z-[150] glass-effect bg-surface/90 flex flex-col p-8"
+    id="mobile-menu-overlay">
+    <div class="flex justify-between items-center mb-12">
+      <div
+        class="font-headline text-xl font-bold tracking-tighter uppercase">
+        AURUM MOTORS
+      </div>
+      <button class="p-2" id="close-menu-btn">
+        <span class="material-symbols-outlined text-3xl">close</span>
+      </button>
+    </div>
+    <div class="flex flex-col gap-8" id="mobile-menu-content">
+      <a
+        class="text-4xl font-headline font-bold uppercase hover:text-primary transition-colors"
+        href="#">Home</a>
+      <a
+        class="text-4xl font-headline font-bold uppercase hover:text-primary transition-colors"
+        href="#">About</a>
+      <a
+        class="text-4xl font-headline font-bold uppercase hover:text-primary transition-colors"
+        href="#">Inventory</a>
+      <a
+        class="text-4xl font-headline font-bold uppercase hover:text-primary transition-colors"
+        href="#">Articles</a>
+      <a
+        class="text-4xl font-headline font-bold uppercase hover:text-primary transition-colors"
+        href="#">Contact</a>
+      <button
+        class="mt-8 bg-white text-surface py-4 rounded-xl text-lg font-bold uppercase tracking-widest">
+        Make Inquiry
+      </button>
+    </div>
+  </div>
   @yield('content')
   <footer
     class="w-full py-section-gap bg-black/100 border-radius" style="border-radius: 100px 0px 0px 0px">
@@ -381,6 +472,40 @@
         nav.classList.add("bg-surface/80");
         nav.classList.remove("bg-surface-dim/95");
       }
+    });
+    const mainNav = document.getElementById("main-nav");
+    const hamburgerBtn = document.getElementById("hamburger-btn");
+    const closeMenuBtn = document.getElementById("close-menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu-overlay");
+
+    // Calculate scrollbar width to prevent "jump" when menu opens
+    const scrollbarWidth =
+      window.innerWidth - document.documentElement.clientWidth;
+    document.documentElement.style.setProperty(
+      "--scrollbar-width",
+      `${scrollbarWidth}px`,
+    );
+
+    // Scroll listener for floating pill effect
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 50) {
+        mainNav.classList.add("nav-floating");
+        mainNav.classList.add("glass-effect");
+      } else {
+        mainNav.classList.remove("nav-floating");
+        mainNav.classList.remove("glass-effect");
+      }
+    });
+
+    // Mobile menu toggle logic
+    hamburgerBtn.addEventListener("click", () => {
+      mobileMenu.classList.add("active");
+      document.body.classList.add("menu-open");
+    });
+
+    closeMenuBtn.addEventListener("click", () => {
+      mobileMenu.classList.remove("active");
+      document.body.classList.remove("menu-open");
     });
   </script>
 </body>
