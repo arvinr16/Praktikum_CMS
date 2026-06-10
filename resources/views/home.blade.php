@@ -157,7 +157,7 @@
                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5rDzzXZloK633XzrNd6rogFLLsIKI3pimEh1PguUGP5-a5ehkYOdX76b_WuPt2wumgjKdOT8fTz-twSoV2qKdh01uKu51W5MTFDfSUvS4qUB_41Z6Fd5EpO1vIu_MgRPAWrocc96AmuraWcQZaHbvs9P_guJgLGP_4GvSPITxnwn4VRUjymcBtlHwNBc-YCIWQjEGhSYZZzWaU4yg0JBOPbacHwgYnOe53tWwJEdywU1qXVtMQGNRi6dU1iv6jlbR8rtjZLoZ_qQH" />
                 <img
                     alt="Concierge Service"
-                    class="rounded-xl w-full h-80 object-cover translate-y-12 tilt-card shadow-2xl"
+                    class="rounded-xl w-full h-80 object-cover tilt-card shadow-2xl"
                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZPl3GQisCDXBtrM1b3HNgj_RgJfffpC1zYd_pkltLMEorAvshnqWLoA_g8boFDBDQOGySnEPdw9RpG1jqVE2ZeQAyg_BWC7adMYoYkw2QmQ32q-x8gnuKWTjW4SiLz713faZpyOg6v_oP2EO8UzaBbt1QUsyzZfTSjvgRxoV9Vw7ee-tDnYhVteVnG2MCo3MxsiVl42Te4XeH14nui3A0qTE_0W-DdPMuvXiy7jbpHc0bQ0mjQnwciiXj-BuE1tneiKbvgJluNJP8" />
             </div>
         </div>
