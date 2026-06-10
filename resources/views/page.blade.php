@@ -8,7 +8,7 @@
             <div
                 class="absolute inset-0 bg-gradient-to-b from-transparent via-surface-dim/50 to-surface-dim z-10"></div>
             <img
-                class="w-full h-full object-cover"
+                class="w-full h-full object-cover opacity-50"
                 data-alt="A cinematic low-angle shot of a high-end, dark gray luxury vehicle parked inside a sleek, modern architectural garage. The lighting is dramatic and technical, with cool blue and sharp red neon accents reflecting off the polished concrete floor and the car's metallic surface."
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuAF9oH-Sc0ABhNrfAgPuCvpCCfrvydvAkdeVEznuVNEeeEi2fCWam-iXY7sK6oQRk_yu5dwpZvdUZmstRuI_pAf63I2SFwXddV7a2kSPYc_YjEmICw1ss5mKZFtR7IZh8ZdsRNOtruFeEGlCNnO1x2BRiZDDKTOYJrs4zfuRtcGeeOfkveAOqK55VauVZt4SCePz6LCdn1bPrz_N8k53lvdLZ15BWFTijp48NSKceAu0qzE3GVFHgN-TmdM8gtbeS4PH1E836ZU7ge5" />
         </div>
