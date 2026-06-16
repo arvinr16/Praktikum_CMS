@@ -103,11 +103,11 @@
       transform: translateY(-2px);
     }
 
-    #nav-container {
-      transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    #main-nav {
+      transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 0.9);
     }
 
-    /* Navbar Floating State - Removing the "background hitam" behind it */
+    /* Navbar Floating State */
     #main-nav.nav-floating {
       margin-top: 1rem;
       width: calc(100% - 2rem);
@@ -120,6 +120,8 @@
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
       padding-left: 2rem;
       padding-right: 2rem;
+      backdrop-filter: blur(13px);
+      -webkit-backdrop-filter: blur(13px);
     }
 
     /* Prevent scrollbar jump when mobile menu opens */
@@ -129,9 +131,7 @@
     }
 
     #mobile-menu-overlay {
-      transition:
-        opacity 0.4s ease,
-        visibility 0.4s ease;
+      transition: opacity 0.4s ease, visibility 0.4s ease;
       opacity: 0;
       visibility: hidden;
     }
@@ -285,10 +285,10 @@
     class="fixed top-0 w-full z-[100] h-20 flex items-center border-b border-white/5"
     id="main-nav">
     <div
-      class="max-w-container-max mx-auto w-full px-margin-desktop flex justify-between items-center"
+      class="max-w-container-max mx-auto w-full px-5 md:px-margin-desktop flex justify-between items-center"
       id="nav-inner">
       <div
-        class="font-headline text-xl font-bold tracking-tighter">
+        class="font-headline text-lg md:text-xl font-bold tracking-tighter whitespace-nowrap">
         Elegance MOTORS
       </div>
       <div class="hidden md:flex gap-8 items-center">
@@ -325,7 +325,7 @@
   </nav>
   <!-- Mobile Menu Overlay -->
   <div
-    class="fixed inset-0 z-[150] glass-effect bg-surface/90 flex flex-col p-8"
+    class="fixed inset-0 z-[150] bg-surface/90 flex flex-col p-8"
     id="mobile-menu-overlay">
     <div class="flex justify-between items-center mb-12">
       <div
@@ -474,41 +474,52 @@
       }
     });
 
-    // Hamburger mobile
+    // === Referensi elemen ===
     const mainNav = document.getElementById("main-nav");
     const hamburgerBtn = document.getElementById("hamburger-btn");
     const closeMenuBtn = document.getElementById("close-menu-btn");
     const mobileMenu = document.getElementById("mobile-menu-overlay");
 
-    // Calculate scrollbar width to prevent "jump" when menu opens
-    const scrollbarWidth =
-      window.innerWidth - document.documentElement.clientWidth;
-    document.documentElement.style.setProperty(
-      "--scrollbar-width",
-      `${scrollbarWidth}px`,
-    );
+    const SCROLL_THRESHOLD = 50; // jarak scroll (px) sebelum navbar floating
 
-    // Scroll listener for floating pill effect
+    // === Hitung lebar scrollbar, biar layout gak "jump" pas menu mobile dibuka ===
+    function setScrollbarWidthVar() {
+      const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+      document.documentElement.style.setProperty("--scrollbar-width", `${scrollbarWidth}px`);
+    }
+    setScrollbarWidthVar();
+    window.addEventListener("resize", setScrollbarWidthVar);
+
+    // === Efek floating navbar saat scroll ===
+    let isTicking = false;
+
+    function updateNavbarState() {
+      mainNav.classList.toggle("nav-floating", window.scrollY > SCROLL_THRESHOLD);
+      isTicking = false;
+    }
+
     window.addEventListener("scroll", () => {
-      if (window.scrollY > 50) {
-        mainNav.classList.add("nav-floating");
-        mainNav.classList.add("glass-effect");
-      } else {
-        mainNav.classList.remove("nav-floating");
-        mainNav.classList.remove("glass-effect");
+      if (!isTicking) {
+        requestAnimationFrame(updateNavbarState);
+        isTicking = true;
       }
     });
 
-    // Mobile menu toggle logic
-    hamburgerBtn.addEventListener("click", () => {
+    updateNavbarState(); // jalanin sekali di awal, buat handle kondisi reload
+
+    // === Toggle menu mobile ===
+    function openMobileMenu() {
       mobileMenu.classList.add("active");
       document.body.classList.add("menu-open");
-    });
+    }
 
-    closeMenuBtn.addEventListener("click", () => {
+    function closeMobileMenu() {
       mobileMenu.classList.remove("active");
       document.body.classList.remove("menu-open");
-    });
+    }
+
+    hamburgerBtn.addEventListener("click", openMobileMenu);
+    closeMenuBtn.addEventListener("click", closeMobileMenu);
   </script>
 </body>
 
