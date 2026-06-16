@@ -24,9 +24,10 @@ Kita bisa membuat untuk admin kira2 seperti ini:
 
 // Route yg tidak perlu login
 Route::get('/', [FrontController::class, 'index'])->name('index');
-Route::get('/page', [FrontController::class, 'page'])->name('page');
+Route::get('/pages', [FrontController::class, 'pages'])->name('pages');
 Route::get('/cars', [FrontController::class, 'cars'])->name('cars');
-Route::get('/brand', [FrontController::class, 'brand'])->name('brand');
+Route::get('/brands', [FrontController::class, 'brands'])->name('brands');
+Route::get('/articles', [FrontController::class, 'articles'])->name('articles');
 Route::get('/test', [FrontController::class, 'test'])->name('test');
 // Route::get('/', function () {
 //     return view('welcome');

@@ -11,9 +11,9 @@ class FrontController extends Controller
         return view('home');
     }
 
-    public function page()
+    public function pages()
     {
-        return view('page');
+        return view('pages');
     }
 
     public function cars()
@@ -21,9 +21,14 @@ class FrontController extends Controller
         return view('cars');
     }
 
-    public function brand()
+    public function brands()
     {
-        return view('brand');
+        return view('brands');
+    }
+
+    public function articles()
+    {
+        return view('articles');
     }
 
     public function test()
