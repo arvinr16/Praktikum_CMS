@@ -21,6 +21,11 @@ class FrontController extends Controller
         return view('cars');
     }
 
+    public function brand()
+    {
+        return view('brand');
+    }
+
     public function test()
     {
         return view('test');

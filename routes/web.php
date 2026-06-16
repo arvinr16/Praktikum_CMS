@@ -22,9 +22,11 @@ Kita bisa membuat untuk admin kira2 seperti ini:
 |
 */
 
+// Route yg tidak perlu login
 Route::get('/', [FrontController::class, 'index'])->name('index');
 Route::get('/page', [FrontController::class, 'page'])->name('page');
 Route::get('/cars', [FrontController::class, 'cars'])->name('cars');
+Route::get('/brand', [FrontController::class, 'brand'])->name('brand');
 Route::get('/test', [FrontController::class, 'test'])->name('test');
 // Route::get('/', function () {
 //     return view('welcome');
@@ -34,6 +36,7 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+// Route yg perlu login
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
