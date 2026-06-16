@@ -288,19 +288,19 @@
       class="max-w-container-max mx-auto w-full px-margin-desktop flex justify-between items-center"
       id="nav-inner">
       <div
-        class="font-headline text-xl font-bold tracking-tighter uppercase">
-        AURUM MOTORS
+        class="font-headline text-xl font-bold tracking-tighter">
+        Elegance MOTORS
       </div>
       <div class="hidden md:flex gap-8 items-center">
         <a
-          class="text-sm font-medium hover:text-primary transition-colors"
-          href="#">Home</a>
+          class="{{ request()->routeIs('index') ? 'font-body-md text-body-md text-primary dark:text-primary border-b-2 border-metallic-start pb-1 font-bold' : '' }}"
+          href="{{ '/' }}">Home</a>
         <a
-          class="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors"
-          href="#">About</a>
+          class="{{ request()->routeIs('page') ? 'font-body-md text-body-md text-primary dark:text-primary border-b-2 border-metallic-start pb-1 font-bold' : '' }}"
+          href="{{ 'page' }}">About</a>
         <a
-          class="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors"
-          href="#">Inventory</a>
+          class="{{ request()->routeIs('cars') ? 'font-body-md text-body-md text-primary dark:text-primary border-b-2 border-metallic-start pb-1 font-bold' : '' }}"
+          href="{{ 'cars' }}">Cars</a>
         <a
           class="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors"
           href="#">Articles</a>
@@ -310,7 +310,7 @@
       </div>
       <div class="flex items-center gap-4">
         <button
-          class="hidden md:block bg-white text-surface px-6 py-2 rounded-full text-xs font-bold uppercase tracking-wider hover:bg-primary transition-all">
+          class="hidden md:block bg-white text-surface px-6 py-2 rounded-full text-xs font-bold uppercase tracking-wider hover:bg-[#e23644] hover:text-white transition-all">
           Inquiry
         </button>
         <button
@@ -329,8 +329,8 @@
     id="mobile-menu-overlay">
     <div class="flex justify-between items-center mb-12">
       <div
-        class="font-headline text-xl font-bold tracking-tighter uppercase">
-        AURUM MOTORS
+        class="font-headline text-xl font-bold tracking-tighter">
+        Elegance MOTORS
       </div>
       <button class="p-2" id="close-menu-btn">
         <span class="material-symbols-outlined text-3xl">close</span>
@@ -339,13 +339,13 @@
     <div class="flex flex-col gap-8" id="mobile-menu-content">
       <a
         class="text-4xl font-headline font-bold uppercase hover:text-primary transition-colors"
-        href="#">Home</a>
+        href="{{'/'}}">Home</a>
       <a
         class="text-4xl font-headline font-bold uppercase hover:text-primary transition-colors"
-        href="#">About</a>
+        href="{{'page'}}">About</a>
       <a
         class="text-4xl font-headline font-bold uppercase hover:text-primary transition-colors"
-        href="#">Inventory</a>
+        href="{{'cars'}}">Inventory</a>
       <a
         class="text-4xl font-headline font-bold uppercase hover:text-primary transition-colors"
         href="#">Articles</a>
@@ -473,6 +473,8 @@
         nav.classList.remove("bg-surface-dim/95");
       }
     });
+
+    // Hamburger mobile
     const mainNav = document.getElementById("main-nav");
     const hamburgerBtn = document.getElementById("hamburger-btn");
     const closeMenuBtn = document.getElementById("close-menu-btn");
