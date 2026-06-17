@@ -296,14 +296,14 @@
           class="{{ request()->routeIs('index') ? 'font-body-md text-body-md text-primary dark:text-primary border-b-2 border-metallic-start pb-1 font-bold' : '' }}"
           href="{{ '/' }}">Home</a>
         <a
-          class="{{ request()->routeIs('page') ? 'font-body-md text-body-md text-primary dark:text-primary border-b-2 border-metallic-start pb-1 font-bold' : '' }}"
-          href="{{ 'page' }}">About</a>
+          class="{{ request()->routeIs('pages') ? 'font-body-md text-body-md text-primary dark:text-primary border-b-2 border-metallic-start pb-1 font-bold' : '' }}"
+          href="{{ 'pages' }}">About</a>
         <a
           class="{{ request()->routeIs('cars') ? 'font-body-md text-body-md text-primary dark:text-primary border-b-2 border-metallic-start pb-1 font-bold' : '' }}"
           href="{{ 'cars' }}">Cars</a>
         <a
-          class="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors"
-          href="#">Articles</a>
+          class="{{ request()->routeIs('articles') ? 'font-body-md text-body-md text-primary dark:text-primary border-b-2 border-metallic-start pb-1 font-bold' : '' }}"
+          href="{{ 'articles' }}">Articles</a>
         <a
           class="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors"
           href="#">Contact</a>
@@ -339,16 +339,16 @@
     <div class="flex flex-col gap-8" id="mobile-menu-content">
       <a
         class="text-4xl font-headline font-bold uppercase hover:text-primary transition-colors"
-        href="{{'/'}}">Home</a>
+        href="{{ '/' }}">Home</a>
       <a
         class="text-4xl font-headline font-bold uppercase hover:text-primary transition-colors"
-        href="{{'page'}}">About</a>
+        href="{{ 'pages' }}">About</a>
       <a
         class="text-4xl font-headline font-bold uppercase hover:text-primary transition-colors"
-        href="{{'cars'}}">Inventory</a>
+        href="{{ 'cars' }}">Cars</a>
       <a
         class="text-4xl font-headline font-bold uppercase hover:text-primary transition-colors"
-        href="#">Articles</a>
+        href="{{ 'articles' }}">Articles</a>
       <a
         class="text-4xl font-headline font-bold uppercase hover:text-primary transition-colors"
         href="#">Contact</a>

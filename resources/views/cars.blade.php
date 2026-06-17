@@ -267,7 +267,7 @@
                     <div class="mt-auto flex items-center justify-between">
                         <span class="text-primary font-bold text-headline-md">Rp 735.8M</span>
                         <a
-                            href="{{'brand'}}"
+                            href="{{'brands'}}"
                             class="material-symbols-outlined text-primary bg-surface-container-highest p-3 rounded-full hover:bg-metallic-start transition-colors">
                             arrow_forward
                         </a>
