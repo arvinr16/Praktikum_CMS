@@ -31,6 +31,11 @@ class FrontController extends Controller
         return view('articles');
     }
 
+    public function contact()
+    {
+        return view('contact');
+    }
+
     public function test()
     {
         return view('test');

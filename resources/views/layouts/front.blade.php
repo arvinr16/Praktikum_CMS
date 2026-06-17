@@ -305,8 +305,8 @@
           class="{{ request()->routeIs('articles') ? 'font-body-md text-body-md text-primary dark:text-primary border-b-2 border-metallic-start pb-1 font-bold' : '' }}"
           href="{{ 'articles' }}">Articles</a>
         <a
-          class="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors"
-          href="#">Contact</a>
+          class="{{ request()->routeIs('contact') ? 'font-body-md text-body-md text-primary dark:text-primary border-b-2 border-metallic-start pb-1 font-bold' : '' }}"
+          href="{{ 'contact' }}">Contact</a>
       </div>
       <div class="flex items-center gap-4">
         <button
@@ -351,7 +351,7 @@
         href="{{ 'articles' }}">Articles</a>
       <a
         class="text-4xl font-headline font-bold uppercase hover:text-primary transition-colors"
-        href="#">Contact</a>
+        href="{{ 'contact' }}">Contact</a>
       <button
         class="mt-8 bg-white text-surface py-4 rounded-xl text-lg font-bold uppercase tracking-widest">
         Make Inquiry
