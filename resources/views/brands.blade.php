@@ -52,7 +52,7 @@
                 <div
                     class="glass-card p-8 rounded-xl border-l-4 border-l-metallic-start tilt-card">
                     <h1 class="font-headline-md text-headline-md text-primary mb-2">
-                        Toyota Fortuner 2.8 GR Sport
+                        {{ $car }}
                     </h1>
                     <p class="font-body-lg text-body-lg text-on-surface-variant mb-6">
                         The Pinnacle of Prestige &amp; Power.
