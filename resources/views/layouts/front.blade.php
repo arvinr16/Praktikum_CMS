@@ -294,19 +294,19 @@
       <div class="hidden md:flex gap-8 items-center">
         <a
           class="{{ request()->routeIs('index') ? 'font-body-md text-body-md text-primary dark:text-primary border-b-2 border-metallic-start pb-1 font-bold' : '' }}"
-          href="{{ '/' }}">Home</a>
+          href="{{ url('/') }}">Home</a>
         <a
           class="{{ request()->routeIs('pages') ? 'font-body-md text-body-md text-primary dark:text-primary border-b-2 border-metallic-start pb-1 font-bold' : '' }}"
-          href="{{ 'pages' }}">About</a>
+          href="{{ url('pages') }}">About</a>
         <a
           class="{{ request()->routeIs('cars') ? 'font-body-md text-body-md text-primary dark:text-primary border-b-2 border-metallic-start pb-1 font-bold' : '' }}"
-          href="{{ 'cars' }}">Cars</a>
+          href="{{ url('cars') }}">Cars</a>
         <a
           class="{{ request()->routeIs('articles') ? 'font-body-md text-body-md text-primary dark:text-primary border-b-2 border-metallic-start pb-1 font-bold' : '' }}"
-          href="{{ 'articles' }}">Articles</a>
+          href="{{ url('articles') }}">Articles</a>
         <a
           class="{{ request()->routeIs('contact') ? 'font-body-md text-body-md text-primary dark:text-primary border-b-2 border-metallic-start pb-1 font-bold' : '' }}"
-          href="{{ 'contact' }}">Contact</a>
+          href="{{ url('contact') }}">Contact</a>
       </div>
       <div class="flex items-center gap-4">
         <button
@@ -339,19 +339,19 @@
     <div class="flex flex-col gap-8" id="mobile-menu-content">
       <a
         class="text-4xl font-headline font-bold uppercase hover:text-primary transition-colors"
-        href="{{ '/' }}">Home</a>
+        href="{{ url('/') }}">Home</a>
       <a
         class="text-4xl font-headline font-bold uppercase hover:text-primary transition-colors"
-        href="{{ 'pages' }}">About</a>
+        href="{{ url('pages') }}">About</a>
       <a
         class="text-4xl font-headline font-bold uppercase hover:text-primary transition-colors"
-        href="{{ 'cars' }}">Cars</a>
+        href="{{ url('cars') }}">Cars</a>
       <a
         class="text-4xl font-headline font-bold uppercase hover:text-primary transition-colors"
-        href="{{ 'articles' }}">Articles</a>
+        href="{{ url('articles') }}">Articles</a>
       <a
         class="text-4xl font-headline font-bold uppercase hover:text-primary transition-colors"
-        href="{{ 'contact' }}">Contact</a>
+        href="{{ url('contact') }}">Contact</a>
       <button
         class="mt-8 bg-white text-surface py-4 rounded-xl text-lg font-bold uppercase tracking-widest">
         Make Inquiry
