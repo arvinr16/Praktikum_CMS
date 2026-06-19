@@ -29,7 +29,6 @@ Route::get('/cars', [FrontController::class, 'cars'])->name('cars');
 Route::get('/cars/{slug}', [FrontController::class, 'brands'])->name('brands');
 Route::get('/articles', [FrontController::class, 'articles'])->name('articles');
 Route::get('/contact', [FrontController::class, 'contact'])->name('contact');
-Route::get('/test', [FrontController::class, 'test'])->name('test');
 // Route::get('/', function () {
 //     return view('welcome');
 // });
