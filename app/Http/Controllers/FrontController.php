@@ -21,9 +21,10 @@ class FrontController extends Controller
         return view('cars');
     }
 
-    public function brands()
+    public function brands($slug)
     {
-        return view('brands');
+        $car = $slug;
+        return view('brands', compact('car'));
     }
 
     public function articles()
