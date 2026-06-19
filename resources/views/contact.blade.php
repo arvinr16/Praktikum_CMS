@@ -360,12 +360,12 @@
           </p>
           <div class="flex flex-col md:flex-row gap-4">
             <input
-              class="flex-1 bg-surface-container-low border border-outline-variant px-6 py-4 focus:ring-0 focus:border-primary"
+              class="flex-1 bg-surface-container-low border rounded-full border-outline-variant px-6 py-4 focus:ring-0 focus:border-primary"
               placeholder="Enter your email"
               type="email"
             />
             <button
-              class="metallic-button px-10 py-4 font-label-sm text-label-sm uppercase font-bold tracking-widest"
+              class="metallic-button px-10 py-4 font-label-sm text-label-sm uppercase hover:bg-[#e23644] hover:rounded-full hover:transition-all font-bold tracking-widest"
             >
               Subscribe
             </button>
