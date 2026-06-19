@@ -227,10 +227,11 @@
                     </div>
                     <div class="mt-auto flex items-center justify-between">
                         <span class="text-primary font-bold text-headline-md">Rp 740.6M</span>
-                        <button
+                        <a
+                            href="{{url('cars',['brand'=>'mitsubishi'])}}"
                             class="material-symbols-outlined text-primary bg-surface-container-highest p-3 rounded-full hover:bg-metallic-start transition-colors">
                             arrow_forward
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -267,7 +268,7 @@
                     <div class="mt-auto flex items-center justify-between">
                         <span class="text-primary font-bold text-headline-md">Rp 735.8M</span>
                         <a
-                            href="{{'brands'}}"
+                            href="{{url('cars',['brand'=>'toyota'])}}"
                             class="material-symbols-outlined text-primary bg-surface-container-highest p-3 rounded-full hover:bg-metallic-start transition-colors">
                             arrow_forward
                         </a>
