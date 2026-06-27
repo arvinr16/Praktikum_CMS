@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('image');
             $table->text('description');
             $table->timestamps();
-            $table->foreignId('brand_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('brand_id')->constrained()->restrictOnDelete();
         });
     }
 
