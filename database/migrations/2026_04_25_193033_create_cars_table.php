@@ -13,14 +13,17 @@ return new class extends Migration
     {
         Schema::create('cars', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('brand_id')->constrained()->restrictOnDelete();
             $table->string('name');
             $table->string('slug')->unique();
             $table->decimal('price', 15, 2);
             $table->integer('year');
             $table->string('image');
             $table->text('description');
+            $table->enum('status',['available','sold'])->default('available');
+            $table->enum('transmission',['automatic','manual'])->nullable;
+            $table->integer('mileage')->nullable;
             $table->timestamps();
-            $table->foreignId('brand_id')->constrained()->restrictOnDelete();
         });
     }
 
