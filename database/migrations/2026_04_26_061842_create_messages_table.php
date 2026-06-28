@@ -13,10 +13,9 @@ return new class extends Migration
     {
         Schema::create('messages', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('car_id')->nullable()->constrained()->nullOnDelete();
             $table->string('name');
             $table->string('email');
-            $table->string('phone')->nullable();
+            $table->string('phone', 20)->nullable();
             $table->text('message');
             $table->boolean('is_read')->default('false');
             $table->timestamps();
