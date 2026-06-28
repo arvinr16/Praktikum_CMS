@@ -13,12 +13,12 @@ return new class extends Migration
     {
         Schema::create('articles', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('category_id')->constrained()->restrictOnDelete();
             $table->string('title');
             $table->string('slug')->unique();
             $table->string('image');
             $table->text('content');
             $table->timestamps();
-            $table->foreignId('category_id')->constrained()->restrictOnDelete();
         });
     }
 

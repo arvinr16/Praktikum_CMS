@@ -21,8 +21,8 @@ return new class extends Migration
             $table->string('image');
             $table->text('description');
             $table->enum('status',['available','sold'])->default('available');
-            $table->enum('transmission',['automatic','manual'])->nullable;
-            $table->integer('mileage')->nullable;
+            $table->enum('transmission',['automatic','manual'])->nullable();
+            $table->integer('mileage')->nullable();
             $table->timestamps();
         });
     }
