@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Article extends Model
 {
+    use HasFactory;
+
     protected $fillable = [
         'category_id',
         'title',
@@ -14,6 +16,11 @@ class Article extends Model
         'image',
         'content'
     ];
+
+    public function getRouteKeyName(): string
+    {
+        return 'slug';
+    }
 
     public function category()
     {
