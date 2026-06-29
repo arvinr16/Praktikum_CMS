@@ -3,6 +3,11 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FrontController;
+use App\Http\Controllers\Front\HomeController;
+use App\Http\Controllers\Front\CarController;
+use App\Http\Controllers\Front\ArticleController;
+use App\Http\Controllers\Front\PageController;
+use App\Http\Controllers\Front\ContactController;
 
 
 /*
@@ -21,6 +26,8 @@ Kita bisa membuat untuk admin kira2 seperti ini:
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+// Route Home/Index
+
 
 // Route yg tidak perlu login
 Route::get('/', [FrontController::class, 'index'])->name('index');
