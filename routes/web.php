@@ -33,7 +33,7 @@ use App\Http\Controllers\ProfileController;
 // Route Home/Index
 
 
-// PUBLIC - Halaman yang tidak perlu autentikasi/login
+// => PUBLIC - Halaman yang tidak perlu autentikasi/login
 // 1. Home/Index
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
@@ -55,15 +55,34 @@ Route::get('/contact', [ContactController::class, 'store'])->name('contact.store
 //     return view('welcome');
 // });
 
+// Autentikasi bawaan Breeze
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
-
-// Route yg perlu login
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-
 require __DIR__ . '/auth.php';
+
+// => ADMIN - Halaman yang memerlukan autentikasi/login
+Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () {
+// 1. Dashboard
+Route::get('/', fn () => view('admin.dashboard'))->name('dashboard');
+
+// 2. Katalog
+Route::resource('brands', BrandController::class);
+Route::resource('cars', AdminCarController::class);
+
+// 3. Konten
+Route::resource('categories', CategoryController::class);
+Route::resource('articles', AdminArticleController::class);
+Route::resource('pages', AdminPageController::class);
+
+// => CRM - Hanya index, show, destroy (pesan dari pengunjung, bukan admin)
+Route::resource('messages', MessageController::class)->only(['index', 'show', 'destroy']);
+
+// => Tandai pesan sudah dibaca: PATCH /admin/messages/{message}/read
+Route::patch('messages/{message}/read', [MessageController::class, 'markRead'])->name('messages.markRead');
+});
