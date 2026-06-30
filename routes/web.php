@@ -1,20 +1,24 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FrontController;
+// Front Controllers
 use App\Http\Controllers\Front\HomeController;
 use App\Http\Controllers\Front\CarController;
 use App\Http\Controllers\Front\ArticleController;
 use App\Http\Controllers\Front\PageController;
 use App\Http\Controllers\Front\ContactController;
+// Admin Controllers
+use App\Http\Controllers\Admin\BrandController;
+use App\Http\Controllers\Admin\CarController as AdminCarController;
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\ArticleController as AdminArticleController;
+use App\Http\Controllers\Admin\PageController as AdminPageController;
+use App\Http\Controllers\Admin\MessageController;
+// Auth (Breeze)
+use App\Http\Controllers\ProfileController;
 
 
-/*
-Notes!
-Kita bisa membuat untuk admin kira2 seperti ini:
-=> use App\Http\Controllers\Admin\FrontController; <=
-*/
 
 /*
 |--------------------------------------------------------------------------
@@ -29,13 +33,24 @@ Kita bisa membuat untuk admin kira2 seperti ini:
 // Route Home/Index
 
 
-// Route yg tidak perlu login
-Route::get('/', [FrontController::class, 'index'])->name('index');
-Route::get('/pages', [FrontController::class, 'pages'])->name('pages');
-Route::get('/cars', [FrontController::class, 'cars'])->name('cars');
-Route::get('/cars/{slug}', [FrontController::class, 'brands'])->name('brands');
-Route::get('/articles', [FrontController::class, 'articles'])->name('articles');
-Route::get('/contact', [FrontController::class, 'contact'])->name('contact');
+// PUBLIC - Halaman yang tidak perlu autentikasi/login
+// 1. Home/Index
+Route::get('/', [HomeController::class, 'index'])->name('home');
+
+// 2. Katalog & Detail Mobil
+Route::get('/cars', [CarController::class, 'index'])->name('cars.index');
+Route::get('/cars/{car:slug}', [CarController::class, 'show'])->name('cars.show');
+
+// 3. Artikel
+Route::get('/articles', [ArticleController::class, 'index'])->name('articles.index');
+Route::get('/articles/{article:slug}', [ArticleController::class, 'show'])->name('articles.show');
+
+// 4. Page atau Halaman Statis (About, Services, dll)
+Route::get('/pages/{page:slug}', [PageController::class, 'show'])->name('pages.show');
+
+// 5. Kontak
+Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
+Route::get('/contact', [ContactController::class, 'store'])->name('contact.store');
 // Route::get('/', function () {
 //     return view('welcome');
 // });
@@ -51,4 +66,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
