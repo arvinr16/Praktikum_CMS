@@ -43,13 +43,8 @@
     }
 
     @keyframes grid-move {
-      0% {
-        background-position: 0 0;
-      }
-
-      100% {
-        background-position: 500px 500px;
-      }
+      0% { background-position: 0 0; }
+      100% { background-position: 500px 500px; }
     }
 
     /* 2. Global Mouse Glow Effect */
@@ -84,9 +79,7 @@
       transition: opacity 0.3s ease;
     }
 
-    .tilt-card:hover::before {
-      opacity: 1;
-    }
+    .tilt-card:hover::before { opacity: 1; }
 
     .glass-panel {
       backdrop-filter: blur(20px);
@@ -94,16 +87,38 @@
       border: 1px solid rgba(255, 255, 255, 0.05);
     }
 
-    .metallic-cta {
+    .glass-card {
+      backdrop-filter: blur(20px);
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .metallic-cta, .metallic-button {
       background: var(--metallic-gradient);
       box-shadow: 0 4px 15px rgba(226, 54, 68, 0.3);
       transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
     }
 
-    .metallic-cta:hover {
+    .metallic-cta:hover, .metallic-button:hover {
       box-shadow: 0 8px 25px rgba(226, 54, 68, 0.5);
       transform: translateY(-2px);
     }
+
+    .text-glow { text-shadow: 0 0 40px rgba(226, 54, 68, 0.3); }
+
+    .sheen-effect {
+      position: relative;
+      overflow: hidden;
+    }
+    .sheen-effect::after {
+      content: "";
+      position: absolute;
+      top: 0; left: -150%;
+      width: 60%; height: 100%;
+      background: linear-gradient(120deg, transparent, rgba(255,255,255,0.06), transparent);
+      transition: left 1.2s ease;
+    }
+    .sheen-effect:hover::after { left: 150%; }
 
     #main-nav {
       transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 0.9);
@@ -151,6 +166,11 @@
     #mobile-menu-overlay.active #mobile-menu-content {
       transform: translateY(0);
     }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0e0e11; }
+    ::-webkit-scrollbar-thumb { background: #2a2a2d; border-radius: 99px; }
   </style>
 
   <!-- JS -->
@@ -233,47 +253,16 @@
             "display-lg": ["Sora"],
             "label-sm": ["JetBrains Mono"],
             "body-lg": ["Hanken Grotesk"],
+            headline: ["Sora"],
           },
           fontSize: {
-            "headline-xl-mobile": [
-              "32px",
-              {
-                lineHeight: "1.2",
-                fontWeight: "700"
-              },
-            ],
-            "body-md": ["16px", {
-              lineHeight: "1.6",
-              fontWeight: "400"
-            }],
-            "headline-xl": ["48px", {
-              lineHeight: "1.2",
-              fontWeight: "700"
-            }],
-            "headline-md": ["32px", {
-              lineHeight: "1.3",
-              fontWeight: "600"
-            }],
-            "display-lg": [
-              "72px",
-              {
-                lineHeight: "1.1",
-                letterSpacing: "-0.02em",
-                fontWeight: "800",
-              },
-            ],
-            "label-sm": [
-              "12px",
-              {
-                lineHeight: "1.0",
-                letterSpacing: "0.05em",
-                fontWeight: "500",
-              },
-            ],
-            "body-lg": ["18px", {
-              lineHeight: "1.6",
-              fontWeight: "400"
-            }],
+            "headline-xl-mobile": ["32px", { lineHeight: "1.2", fontWeight: "700" }],
+            "body-md": ["16px", { lineHeight: "1.6", fontWeight: "400" }],
+            "headline-xl": ["48px", { lineHeight: "1.2", fontWeight: "700" }],
+            "headline-md": ["32px", { lineHeight: "1.3", fontWeight: "600" }],
+            "display-lg": ["72px", { lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "800" }],
+            "label-sm": ["12px", { lineHeight: "1.0", letterSpacing: "0.05em", fontWeight: "500" }],
+            "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
           },
         },
       },
@@ -281,7 +270,7 @@
   </script>
 </head>
 
-<body class="relative min-h-[200vh] bg-surface-dim selection:bg-metallic-start selection:text-white">
+<body class="relative min-h-screen bg-surface-dim selection:bg-metallic-start selection:text-white">
   <div class="mouse-glow" id="mouse-glow"></div>
   <div class="fixed inset-0 bg-grid-animate pointer-events-none z-0"></div>
 
@@ -292,23 +281,14 @@
   @yield('content')
 
   <!-- Footer -->
-   @include('components.footer')
+  @include('components.footer')
 
   <script>
-    // Logic JS
     // 4. Mouse Position Tracking
     document.addEventListener("mousemove", (e) => {
-      // Global mouse position
-      document.documentElement.style.setProperty(
-        "--mouse-x",
-        `${e.clientX}px`,
-      );
-      document.documentElement.style.setProperty(
-        "--mouse-y",
-        `${e.clientY}px`,
-      );
+      document.documentElement.style.setProperty("--mouse-x", `${e.clientX}px`);
+      document.documentElement.style.setProperty("--mouse-y", `${e.clientY}px`);
 
-      // Per-card mouse position for internal glow
       const cards = document.querySelectorAll(".tilt-card");
       cards.forEach((card) => {
         const rect = card.getBoundingClientRect();
@@ -318,7 +298,6 @@
         card.style.setProperty("--card-mouse-x", `${x}px`);
         card.style.setProperty("--card-mouse-y", `${y}px`);
 
-        // 3D Tilt Effect
         const centerX = rect.width / 2;
         const centerY = rect.height / 2;
         const rotateX = (y - centerY) / 80;
@@ -332,26 +311,11 @@
       });
     });
 
-    // Ensure tilt resets on leave (extra safety)
     const cards = document.querySelectorAll(".tilt-card");
     cards.forEach((card) => {
       card.addEventListener("mouseleave", () => {
         card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
       });
-    });
-
-    // Navigation Highlight on Scroll
-    window.addEventListener("scroll", () => {
-      const nav = document.querySelector("nav");
-      if (window.scrollY > 50) {
-        nav.classList.add("shadow-xl");
-        nav.classList.remove("bg-surface/80");
-        nav.classList.add("bg-surface-dim/95");
-      } else {
-        nav.classList.remove("shadow-xl");
-        nav.classList.add("bg-surface/80");
-        nav.classList.remove("bg-surface-dim/95");
-      }
     });
 
     // === Referensi elemen ===
@@ -360,9 +324,8 @@
     const closeMenuBtn = document.getElementById("close-menu-btn");
     const mobileMenu = document.getElementById("mobile-menu-overlay");
 
-    const SCROLL_THRESHOLD = 50; // jarak scroll (px) sebelum navbar floating
+    const SCROLL_THRESHOLD = 50;
 
-    // === Hitung lebar scrollbar, biar layout gak "jump" pas menu mobile dibuka ===
     function setScrollbarWidthVar() {
       const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
       document.documentElement.style.setProperty("--scrollbar-width", `${scrollbarWidth}px`);
@@ -370,7 +333,6 @@
     setScrollbarWidthVar();
     window.addEventListener("resize", setScrollbarWidthVar);
 
-    // === Efek floating navbar saat scroll ===
     let isTicking = false;
 
     function updateNavbarState() {
@@ -385,9 +347,8 @@
       }
     });
 
-    updateNavbarState(); // jalanin sekali di awal, buat handle kondisi reload
+    updateNavbarState();
 
-    // === Toggle menu mobile ===
     function openMobileMenu() {
       mobileMenu.classList.add("active");
       document.body.classList.add("menu-open");

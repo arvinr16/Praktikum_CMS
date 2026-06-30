@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('slug')->unique();
             $table->decimal('price', 15, 2);
             $table->integer('year');
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->text('description');
             $table->string('status')->default('available');
             $table->string('transmission')->nullable();

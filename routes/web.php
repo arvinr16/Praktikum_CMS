@@ -1,104 +1,97 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\FrontController;
-// Front Controllers
 use App\Http\Controllers\Front\HomeController;
 use App\Http\Controllers\Front\CarController;
 use App\Http\Controllers\Front\ArticleController;
 use App\Http\Controllers\Front\PageController;
 use App\Http\Controllers\Front\ContactController;
-// Admin Controllers
 use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\CarController as AdminCarController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ArticleController as AdminArticleController;
 use App\Http\Controllers\Admin\PageController as AdminPageController;
 use App\Http\Controllers\Admin\MessageController;
-// Auth (Breeze)
 use App\Http\Controllers\ProfileController;
-
-
 
 /*
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
 */
-// Route Home/Index
-
 
 // => PUBLIC - Halaman yang tidak perlu autentikasi/login
-// 1. Home/Index
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-// 2. Katalog & Detail Mobil
+// Katalog & Detail Mobil
 Route::get('/cars', [CarController::class, 'index'])->name('cars.index');
 Route::get('/cars/{car:slug}', [CarController::class, 'show'])->name('cars.show');
 
-// 3. Artikel
+// Artikel
 Route::get('/articles', [ArticleController::class, 'index'])->name('articles.index');
 Route::get('/articles/{article:slug}', [ArticleController::class, 'show'])->name('articles.show');
 
-// 4. Page atau Halaman Statis (About, Services, dll)
+// Halaman Statis (About, Services, dll)
 Route::get('/pages/{page:slug}', [PageController::class, 'show'])->name('pages.show');
 
-// 5. Kontak
+// Kontak
 Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
-Route::get('/contact', [ContactController::class, 'store'])->name('contact.store');
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 
-// Autentikasi bawaan Breeze
+// => AUTENTIKASI - Bawaan Laravel Breeze
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    if (auth()->user()->is_admin) {
+        return redirect()->route('admin.dashboard');
+    }
+    return redirect()->route('home');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
 require __DIR__ . '/auth.php';
 
-// => ADMIN - Halaman yang memerlukan autentikasi/login
-Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () {
-// 1. Dashboard
-Route::get('/', fn () => view('admin.dashboard'))->name('dashboard');
+// => ADMIN - Halaman yang memerlukan autentikasi + role admin
+Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(function () {
+    
+    // 1. Dashboard
+    Route::get('/', function () {
+        $totalCars = \App\Models\Car::count();
+        $availableCars = \App\Models\Car::where('status', 'available')->count();
+        $soldCars = \App\Models\Car::where('status', 'sold')->count();
+        $unreadMessages = \App\Models\Message::where('is_read', false)->count();
+        $recentCars = \App\Models\Car::with('brand')->latest()->take(5)->get();
 
-// 2. Katalog
-// Brand
-Route::resource('brands', BrandController::class);
-// except show for 'brands'
-Route::resource('brands', BrandController::class)->except(['show']);
+        return view('admin.dashboard', compact(
+            'totalCars',
+            'availableCars',
+            'soldCars',
+            'unreadMessages',
+            'recentCars'
+        ));
+    })->name('dashboard');
 
-// Car
-Route::resource('cars', AdminCarController::class);
-// except show for 'cars'
-Route::resource('cars', AdminCarController::class)->except(['show']);
+    // 2. Katalog - Brand (tanpa show)
+    Route::resource('brands', BrandController::class)->except(['show']);
 
-// 3. Konten
-// Category
-Route::resource('categories', CategoryController::class);
-// except show for 'categories'
-Route::resource('categories', CategoryController::class)->except(['show']);
+    // Katalog - Car (tanpa show)
+    Route::resource('cars', AdminCarController::class)->except(['show']);
 
-// Article
-Route::resource('articles', AdminArticleController::class);
-// except show for 'articles'
-Route::resource('articles', AdminArticleController::class)->except(['show']);
+    // 3. Konten - Category (tanpa show)
+    Route::resource('categories', CategoryController::class)->except(['show']);
 
-// Page
-Route::resource('pages', AdminPageController::class);
+    // Konten - Article (tanpa show)
+    Route::resource('articles', AdminArticleController::class)->except(['show']);
 
-// => CRM - Hanya index, show, destroy (pesan dari pengunjung, bukan admin)
-Route::resource('messages', MessageController::class)->only(['index', 'show', 'destroy']);
+    // Konten - Page (tanpa show)
+    Route::resource('pages', AdminPageController::class)->except(['show']);
 
-// => Tandai pesan sudah dibaca: PATCH /admin/messages/{message}/read
-Route::patch('messages/{message}/read', [MessageController::class, 'markRead'])->name('messages.markRead');
+    // 4. CRM - Messages (hanya index, show, destroy)
+    Route::resource('messages', MessageController::class)->only(['index', 'show', 'destroy']);
+
+    // Tandai pesan sudah dibaca
+    Route::patch('messages/{message}/read', [MessageController::class, 'markRead'])->name('messages.markRead');
 });

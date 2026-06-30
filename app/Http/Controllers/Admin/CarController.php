@@ -87,7 +87,10 @@ class CarController extends Controller
 
         $data['slug'] = Str::slug($data['name'] . '_' . $data['year']);
         if ($request->hasFile('image')) {
-            Storage::disk('public')->delete($car->image);
+            // Hapus gambar lama hanya jika ada
+            if ($car->image) {
+                Storage::disk('public')->delete($car->image);
+            }
             $data['image'] = $request->file('image')->store('cars', 'public');
         }
         $car->update($data);
@@ -99,7 +102,10 @@ class CarController extends Controller
      */
     public function destroy(Car $car)
     {
-        Storage::disk('public')->delete($car->image);
+        // Hapus gambar hanya jika ada
+        if ($car->image) {
+            Storage::disk('public')->delete($car->image);
+        }
         $car->delete();
         return redirect()->route('admin.cars.index')->with('success', 'Mobil berhasil dihapus!');
     }

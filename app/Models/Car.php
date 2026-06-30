@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 
 class Car extends Model
 {
@@ -43,7 +44,7 @@ class Car extends Model
     // Label status dalam Bahasa Indonesia dan Penggunaan $car->status_label
     public function getStatusLabelAttribute(): string
     {
-        return match($this->status) {
+        return match ($this->status) {
             'available' =>  'Tersedia',
             'sold'      =>  'Terjual',
             default     =>  ucfirst($this->status)
@@ -54,5 +55,11 @@ class Car extends Model
     public function getPriceFormattedAttribute(): string
     {
         return 'Rp ' . number_format((float) $this->price, 0, ',', '.');
+    }
+
+    // Accessor untuk URL gambar
+    public function getImageUrlAttribute(): string
+    {
+        return $this->image ? Storage::url($this->image) : 'https://via.placeholder.com/400x300?text=No+Image';
     }
 }
