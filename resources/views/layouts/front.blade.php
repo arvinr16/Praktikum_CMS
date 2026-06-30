@@ -5,8 +5,10 @@
 <head>
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <title>Elegance MOTORS INDONESIA | Engineering Excellence</title>
+  <title>@yield('title', 'Elegance MOTORS INDONESIA')</title>
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <!-- CSS -->
   <link
     href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&amp;family=Hanken+Grotesk:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap"
     rel="stylesheet" />
@@ -150,6 +152,8 @@
       transform: translateY(0);
     }
   </style>
+
+  <!-- JS -->
   <script id="tailwind-config">
     tailwind.config = {
       darkMode: "class",
@@ -280,142 +284,18 @@
 <body class="relative min-h-[200vh] bg-surface-dim selection:bg-metallic-start selection:text-white">
   <div class="mouse-glow" id="mouse-glow"></div>
   <div class="fixed inset-0 bg-grid-animate pointer-events-none z-0"></div>
-  <!-- Navigation Bar -->
-  <nav
-    class="fixed top-0 w-full z-[100] h-20 flex items-center border-b border-white/5"
-    id="main-nav">
-    <div
-      class="max-w-container-max mx-auto w-full px-5 md:px-margin-desktop flex justify-between items-center"
-      id="nav-inner">
-      <div
-        class="font-headline text-lg md:text-xl font-bold tracking-tighter whitespace-nowrap">
-        Elegance MOTORS
-      </div>
-      <div class="hidden md:flex gap-8 items-center">
-        <a
-          class="{{ request()->routeIs('index') ? 'font-body-md text-body-md text-primary dark:text-primary border-b-2 border-metallic-start pb-1 font-bold' : '' }}"
-          href="{{ url('/') }}">Home</a>
-        <a
-          class="{{ request()->routeIs('pages') ? 'font-body-md text-body-md text-primary dark:text-primary border-b-2 border-metallic-start pb-1 font-bold' : '' }}"
-          href="{{ url('pages') }}">About</a>
-        <a
-          class="{{ request()->routeIs('cars') ? 'font-body-md text-body-md text-primary dark:text-primary border-b-2 border-metallic-start pb-1 font-bold' : '' }}"
-          href="{{ url('cars') }}">Cars</a>
-        <a
-          class="{{ request()->routeIs('articles') ? 'font-body-md text-body-md text-primary dark:text-primary border-b-2 border-metallic-start pb-1 font-bold' : '' }}"
-          href="{{ url('articles') }}">Articles</a>
-        <a
-          class="{{ request()->routeIs('contact') ? 'font-body-md text-body-md text-primary dark:text-primary border-b-2 border-metallic-start pb-1 font-bold' : '' }}"
-          href="{{ url('contact') }}">Contact</a>
-      </div>
-      <div class="flex items-center gap-4">
-        <button
-          class="hidden md:block bg-white text-surface px-6 py-2 rounded-full text-xs font-bold uppercase tracking-wider hover:bg-[#e23644] hover:text-white transition-all">
-          Inquiry
-        </button>
-        <button
-          class="md:hidden flex flex-col gap-1.5 p-2"
-          id="hamburger-btn">
-          <span class="w-6 h-0.5 bg-on-surface"></span>
-          <span class="w-6 h-0.5 bg-on-surface"></span>
-          <span class="w-4 h-0.5 bg-on-surface self-end"></span>
-        </button>
-      </div>
-    </div>
-  </nav>
-  <!-- Mobile Menu Overlay -->
-  <div
-    class="fixed inset-0 z-[150] bg-surface/90 flex flex-col p-8"
-    id="mobile-menu-overlay">
-    <div class="flex justify-between items-center mb-12">
-      <div
-        class="font-headline text-xl font-bold tracking-tighter">
-        Elegance MOTORS
-      </div>
-      <button class="p-2" id="close-menu-btn">
-        <span class="material-symbols-outlined text-3xl">close</span>
-      </button>
-    </div>
-    <div class="flex flex-col gap-8" id="mobile-menu-content">
-      <a
-        class="text-4xl font-headline font-bold uppercase hover:text-primary transition-colors"
-        href="{{ url('/') }}">Home</a>
-      <a
-        class="text-4xl font-headline font-bold uppercase hover:text-primary transition-colors"
-        href="{{ url('pages') }}">About</a>
-      <a
-        class="text-4xl font-headline font-bold uppercase hover:text-primary transition-colors"
-        href="{{ url('cars') }}">Cars</a>
-      <a
-        class="text-4xl font-headline font-bold uppercase hover:text-primary transition-colors"
-        href="{{ url('articles') }}">Articles</a>
-      <a
-        class="text-4xl font-headline font-bold uppercase hover:text-primary transition-colors"
-        href="{{ url('contact') }}">Contact</a>
-      <button
-        class="mt-8 bg-white text-surface py-4 rounded-xl text-lg font-bold uppercase tracking-widest">
-        Make Inquiry
-      </button>
-    </div>
-  </div>
+
+  <!-- Navbar -->
+  @include('components.navbar')
+
+  <!-- Main Content -->
   @yield('content')
-  <footer
-    class="w-full py-section-gap bg-black/100 border-radius" style="border-radius: 100px 0px 0px 0px">
-    <div
-      class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop max-w-container-max mx-auto">
-      <div class="col-span-1 md:col-span-1">
-        <div
-          class="font-headline-md text-headline-md font-bold text-primary mb-6">
-          Elegance MOTORS
-        </div>
-        <p class="font-body-md text-body-md text-on-surface-variant">
-          The leading destination for premium automotive excellence in
-          Indonesia. Craftsmanship, technology, and trust.
-        </p>
-      </div>
-      <div class="flex flex-col gap-4">
-        <h4
-          class="font-label-sm text-label-sm font-bold text-primary uppercase mb-2">
-          Showrooms
-        </h4>
-        <a
-          class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors"
-          href="#">Jakarta Showroom: Jl. Sudirman No. 12</a>
-        <a
-          class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors"
-          href="#">Surabaya Showroom: Jl. Basuki Rahmat No. 45</a>
-      </div>
-      <div class="flex flex-col gap-4">
-        <h4
-          class="font-label-sm text-label-sm font-bold text-primary uppercase mb-2">
-          Concierge
-        </h4>
-        <a
-          class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors"
-          href="#">Contact: +62 21 555 0123</a>
-        <a
-          class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors"
-          href="#">Email: concierge@Elegance-motors.id</a>
-      </div>
-      <div class="flex flex-col gap-4">
-        <h4
-          class="font-label-sm text-label-sm font-bold text-primary uppercase mb-2">
-          Legal
-        </h4>
-        <a
-          class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors"
-          href="#">Terms of Service</a>
-        <a
-          class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors"
-          href="#">Privacy Policy</a>
-        <div
-          class="mt-4 font-body-md text-body-md text-on-surface-variant opacity-60">
-          © 2026 Elegance Motors Indonesia (ArviNR16). ALL RIGHTS RESERVED.
-        </div>
-      </div>
-    </div>
-  </footer>
+
+  <!-- Footer -->
+   @include('components.footer')
+
   <script>
+    // Logic JS
     // 4. Mouse Position Tracking
     document.addEventListener("mousemove", (e) => {
       // Global mouse position
