@@ -73,6 +73,8 @@ Route::get('/', fn () => view('admin.dashboard'))->name('dashboard');
 
 // 2. Katalog
 Route::resource('brands', BrandController::class);
+// except show for 'brands'
+Route::resource('brands', BrandController::class)->except(['show']);
 Route::resource('cars', AdminCarController::class);
 
 // 3. Konten
