@@ -72,10 +72,14 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
 Route::get('/', fn () => view('admin.dashboard'))->name('dashboard');
 
 // 2. Katalog
+// Brand
 Route::resource('brands', BrandController::class);
 // except show for 'brands'
 Route::resource('brands', BrandController::class)->except(['show']);
+// Car
 Route::resource('cars', AdminCarController::class);
+// except show for 'cars'
+Route::resource('cars', AdminCarController::class)->except(['show']);
 
 // 3. Konten
 Route::resource('categories', CategoryController::class);
