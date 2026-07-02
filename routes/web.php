@@ -83,6 +83,8 @@ Route::resource('cars', AdminCarController::class)->except(['show']);
 
 // 3. Konten
 Route::resource('categories', CategoryController::class);
+// except show for 'categories'
+Route::resource('categories', CategoryController::class)->except(['show']);
 Route::resource('articles', AdminArticleController::class);
 Route::resource('pages', AdminPageController::class);
 
