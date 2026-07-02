@@ -76,16 +76,24 @@ Route::get('/', fn () => view('admin.dashboard'))->name('dashboard');
 Route::resource('brands', BrandController::class);
 // except show for 'brands'
 Route::resource('brands', BrandController::class)->except(['show']);
+
 // Car
 Route::resource('cars', AdminCarController::class);
 // except show for 'cars'
 Route::resource('cars', AdminCarController::class)->except(['show']);
 
 // 3. Konten
+// Category
 Route::resource('categories', CategoryController::class);
 // except show for 'categories'
 Route::resource('categories', CategoryController::class)->except(['show']);
+
+// Article
 Route::resource('articles', AdminArticleController::class);
+// except show for 'articles'
+Route::resource('articles', AdminArticleController::class)->except(['show']);
+
+// Page
 Route::resource('pages', AdminPageController::class);
 
 // => CRM - Hanya index, show, destroy (pesan dari pengunjung, bukan admin)
