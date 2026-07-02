@@ -90,7 +90,6 @@ class CarController extends Controller
             Storage::disk('public')->delete($car->image);
             $data['image'] = $request->file('image')->store('cars', 'public');
         }
-
         $car->update($data);
         return redirect()->route('admin.cars.index')->with('success', 'Data mobil berhasil diperbarui!');
     }
